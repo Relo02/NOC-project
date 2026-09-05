@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>g1_sim</name>
+  <version>0.1.0</version>
+  <description>
+    MuJoCo simulator of the Unitree G1 in an industrial warehouse, used as the
+    plant for the A*+MPC stack: in Gazebo the G1 would have no source of motion
+    without writing one from scratch.
+
+    In kinematic mode (default) the base is integrated from /cmd_vel with
+      x_{k+1} = x_k + (vx cos(yaw) - vy sin(yaw)) dt
+      y_{k+1} = y_k + (vx sin(yaw) + vy cos(yaw)) dt
+      yaw_{k+1} = yaw_k + wz dt
+    which is exactly the holonomic SE(2) model the MPC optimises over: the
+    model/plant mismatch is nil, so the optimization experiments measure the
+    solver and not the gait.
+
+    Derived from the teaching material of the CIHR laboratory (policypilot
+    package), reduced to the simulation part only: Nav2, slam_toolbox and maps
+    are not needed because this stack plans without a prior map.
+  </description>
+  <maintainer email="franci.pedrini@gmail.com">Francesco Pedrini</maintainer>
+  <license>Apache-2.0</license>
+
+  <depend>rclpy</depend>
+  <depend>sensor_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>rosgraph_msgs</depend>
+  <depend>builtin_interfaces</depend>
+  <depend>rcl_interfaces</depend>
+  <depend>tf2_ros</depend>
+  <depend>python3-numpy</depend>
+
+  <!-- pacchetti avviati da launch/g1_a_star_mpc.launch.py -->
+  <exec_depend>a_star_mpc_planner</exec_depend>
+  <exec_depend>robot_real_lidar</exec_depend>
+  <exec_depend>robot_real_goal_manager</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>rviz2</exec_depend>
+
+  <buildtool_depend>ament_python</buildtool_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+
+  <test_depend>ament_copyright</test_depend>
+  <test_depend>ament_flake8</test_depend>
+  <test_depend>ament_pep257</test_depend>
+  <test_depend>python3-pytest</test_depend>
+</package>

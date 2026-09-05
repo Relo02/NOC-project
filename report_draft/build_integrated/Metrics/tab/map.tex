@@ -1,0 +1,22 @@
+\begin{tabular}{llp{0.40\textwidth}}
+  \toprule
+  block & content & target section in the report \\
+  \midrule
+  \S\,\ref{res:disc} & Model discretisation, truncation order & \texttt{sec:discretization} \\
+  \S\,\ref{res:pred} & Open-loop prediction error & \texttt{sec:model, sec:mismatch} \\
+  \S\,\ref{res:nlp} & NLP size and sparsity & \texttt{sec:dims (tab:nlp)} \\
+  \S\,\ref{res:shoot} & Condensed against sparse parametrisation & \texttt{sec:cost} \\
+  \S\,\ref{res:ad} & AD against finite differences & \texttt{sec:solver, sec:impl} \\
+  \S\,\ref{res:hess} & Exact Hessian against L-BFGS & \texttt{sec:solver} \\
+  \S\,\ref{res:solvercmp} & Interior point against active set & \texttt{sec:solver} \\
+  \S\,\ref{res:kkt} & KKT, LICQ, second-order conditions & \texttt{new, next to sec:constraints} \\
+  \S\,\ref{res:penalty} & Exact $\ell^1$ penalty & \texttt{new, next to sec:barrier} \\
+  \S\,\ref{res:terminal} & Terminal equilibrium constraint & \texttt{sec:terminal} \\
+  \S\,\ref{res:robust} & Constraint tightening from measured error & \texttt{new, next to sec:barrier / sec:mismatch} \\
+  \S\,\ref{res:bif} & Solution regularity, bifurcation & \texttt{sec:barriersweep} \\
+  \S\,\ref{res:pf} & Path-parametrised reference & \texttt{sec:refwarm} \\
+  \S\,\ref{res:horizon} & Horizon and sampling time & \texttt{sec:horizon, sec:dtsweep} \\
+  \S\,\ref{res:nc} & Control horizon, and why not move blocking & \texttt{new, next to sec:horizon} \\
+  \S\,\ref{res:pareto} & Multi-objective scalarisation & \texttt{sec:weights} \\
+  \bottomrule
+\end{tabular}

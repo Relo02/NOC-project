@@ -1,0 +1,3 @@
+World,Method,Trial,Success,SR_run (%),CE (m),Time-to-goal (s),Path length (m),Final dist to goal (m),MPC solve mean (ms),MPC solve p95 (ms),MPC solve max (ms),MPC solve samples,pose_source,goal_source,n_path_msgs,n_ref_points,bag_dir,valid_bag,near_zero_path,low_path_msgs,informative,quality_flags,selection_score
+open_world,bo_opti,1,0,0.0,,,,,,,,0,missing,goal_pose,0,0, /media/lorenzo/writable/Go2_navigation/bags_recordings/metrics_data/open_world_bo_opti/T1/bag,False,True,True,False,missing_or_no_samples;near_zero_path;low_path_msgs,0
+open_world,bo_opti,2,0,0.0,,,,,,,,0,missing,goal_pose,0,0, /media/lorenzo/writable/Go2_navigation/bags_recordings/metrics_data/open_world_bo_opti/T2/bag,False,True,True,False,missing_or_no_samples;near_zero_path;low_path_msgs,0

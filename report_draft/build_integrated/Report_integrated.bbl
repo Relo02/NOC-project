@@ -1,0 +1,150 @@
+\begin{thebibliography}{10}
+
+\bibitem{ames2019cbf}
+Aaron~D. Ames, Samuel Coogan, Magnus Egerstedt, Gennaro Notomista, Koushil
+  Sreenath, and Paulo Tabuada.
+\newblock Control barrier functions: Theory and applications.
+\newblock In {\em 18th European Control Conference (ECC)}, pages 3420--3431,
+  2019.
+
+\bibitem{andersson2019casadi}
+Joel A.~E. Andersson, Joris Gillis, Greg Horn, James~B. Rawlings, and Moritz
+  Diehl.
+\newblock {CasADi} -- a software framework for nonlinear optimization and
+  optimal control.
+\newblock {\em Mathematical Programming Computation}, 11(1):1--36, 2019.
+
+\bibitem{barshalom2001estimation}
+Yaakov Bar-Shalom, X.~Rong Li, and Thiagalingam Kirubarajan.
+\newblock {\em Estimation with Applications to Tracking and Navigation: Theory,
+  Algorithms and Software}.
+\newblock Wiley, 2001.
+
+\bibitem{chen1998quasi}
+Hong Chen and Frank Allg{\"o}wer.
+\newblock A quasi-infinite horizon nonlinear model predictive control scheme
+  with guaranteed stability.
+\newblock {\em Automatica}, 34(10):1205--1217, 1998.
+
+\bibitem{diehl2005realtime}
+Moritz Diehl, Rolf Findeisen, Frank Allg{\"o}wer, Hans~Georg Bock, and
+  Johannes~P. Schl{\"o}der.
+\newblock Nominal stability of real-time iteration scheme for nonlinear model
+  predictive control.
+\newblock In {\em IEE Proceedings -- Control Theory and Applications}, volume
+  152, pages 296--308, 2005.
+
+\bibitem{fagiano2025noc}
+Lorenzo Fagiano.
+\newblock Numerical optimization for control, 2025.
+\newblock Lecture notes, course 062047, M.Sc. in Automation and Control
+  Engineering, Politecnico di Milano, v1.1.
+
+\bibitem{hart1968astar}
+Peter~E. Hart, Nils~J. Nilsson, and Bertram Raphael.
+\newblock A formal basis for the heuristic determination of minimum cost paths.
+\newblock {\em IEEE Transactions on Systems Science and Cybernetics},
+  4(2):100--107, 1968.
+
+\bibitem{hyun2014trot}
+Dong~Jin Hyun, Sangok Seok, Jongwoo Lee, and Sangbae Kim.
+\newblock High speed trot-running: implementation of a hierarchical controller
+  using proprioceptive impedance control on the {MIT} {C}heetah.
+\newblock {\em The International Journal of Robotics Research},
+  33(11):1417--1445, 2014.
+
+\bibitem{champ}
+Juan~Miguel Jimeno.
+\newblock {CHAMP}: Hierarchical controller for highly dynamic quadrupedal
+  locomotion.
+\newblock \url{https://github.com/chvmp/champ}, 2020.
+
+\bibitem{koenig2005dstarlite}
+Sven Koenig and Maxim Likhachev.
+\newblock Fast replanning for navigation in unknown terrain.
+\newblock {\em IEEE Transactions on Robotics}, 21(3):354--363, 2005.
+
+\bibitem{lee2013hierarchical}
+Jongwoo Lee.
+\newblock Hierarchical controller for highly dynamic locomotion utilizing
+  pattern modulation and impedance control: implementation on the {MIT}
+  {C}heetah robot.
+\newblock {M.Sc.} thesis, Massachusetts Institute of Technology, Department of
+  Mechanical Engineering, Cambridge, MA, USA, 2013.
+\newblock \url{https://dspace.mit.edu/handle/1721.1/85490}.
+
+\bibitem{li2025amo}
+Jialong Li, Xuxin Cheng, Tianshu Huang, Shiqi Yang, Ri-Zhao Qiu, and Xiaolong
+  Wang.
+\newblock {AMO}: Adaptive motion optimization for hyper-dexterous humanoid
+  whole-body control.
+\newblock In {\em Proceedings of Robotics: Science and Systems ({RSS})}, 2025.
+\newblock \url{https://arxiv.org/abs/2505.03738}.
+
+\bibitem{mayne2000constrained}
+David~Q. Mayne, James~B. Rawlings, Christopher~V. Rao, and Pierre O.~M.
+  Scokaert.
+\newblock Constrained model predictive control: Stability and optimality.
+\newblock {\em Automatica}, 36(6):789--814, 2000.
+
+\bibitem{ortolani2026bo}
+Lorenzo Ortolani, Gabriel Voss, Gabriele Beltrami, Francesco Dorati, and
+  Tommaso~Felice Banfi.
+\newblock Bayesian optimization for learning nonlinear {MPC} in autonomous
+  agent navigation.
+\newblock Talos Robotics AI, Milan, Italy. Companion paper of the
+  \texttt{Go2\_navigation} project, 2026.
+
+\bibitem{pannocchia2003offsetfree}
+Gabriele Pannocchia and James~B. Rawlings.
+\newblock Disturbance models for offset-free model-predictive control.
+\newblock {\em AIChE Journal}, 49(2):426--437, 2003.
+
+\bibitem{raibert1986legged}
+Marc~H. Raibert.
+\newblock {\em Legged Robots That Balance}.
+\newblock MIT Press, Cambridge, MA, USA, 1986.
+
+\bibitem{rasmussen2006gp}
+Carl~E. Rasmussen and Christopher K.~I. Williams.
+\newblock {\em Gaussian Processes for Machine Learning}.
+\newblock MIT Press, 2006.
+
+\bibitem{rawlings2017mpc}
+James~B. Rawlings, David~Q. Mayne, and Moritz~M. Diehl.
+\newblock {\em Model Predictive Control: Theory, Computation, and Design}.
+\newblock Nob Hill Publishing, 2 edition, 2017.
+
+\bibitem{rudin2022walk}
+Nikita Rudin, David Hoeller, Philipp Reist, and Marco Hutter.
+\newblock Learning to walk in minutes using massively parallel deep
+  reinforcement learning.
+\newblock In {\em Proceedings of the 5th Conference on Robot Learning
+  ({CoRL})}, volume 164 of {\em Proceedings of Machine Learning Research},
+  pages 91--100. PMLR, 2022.
+\newblock \url{https://proceedings.mlr.press/v164/rudin22a.html}.
+
+\bibitem{schulman2017ppo}
+John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford, and Oleg Klimov.
+\newblock Proximal policy optimization algorithms.
+\newblock arXiv preprint arXiv:1707.06347, 2017.
+\newblock \url{https://arxiv.org/abs/1707.06347}.
+
+\bibitem{shahriari2016bo}
+Bobak Shahriari, Kevin Swersky, Ziyu Wang, Ryan~P. Adams, and Nando de~Freitas.
+\newblock Taking the human out of the loop: A review of {B}ayesian
+  optimization.
+\newblock {\em Proceedings of the IEEE}, 104(1):148--175, 2016.
+
+\bibitem{wachter2006ipopt}
+Andreas W{\"a}chter and Lorenz~T. Biegler.
+\newblock On the implementation of an interior-point filter line-search
+  algorithm for large-scale nonlinear programming.
+\newblock {\em Mathematical Programming}, 106(1):25--57, 2006.
+
+\bibitem{wright2015coordinate}
+Stephen~J. Wright.
+\newblock Coordinate descent algorithms.
+\newblock {\em Mathematical Programming}, 151(1):3--34, 2015.
+
+\end{thebibliography}

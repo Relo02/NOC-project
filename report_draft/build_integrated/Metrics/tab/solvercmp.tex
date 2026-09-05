@@ -1,0 +1,12 @@
+\begin{tabular}{llrrrr}
+  \toprule
+  regime & instance & ineq. & IPOPT ms / iter & SQP+qpOASES ms / iter & speed-up \\
+  \midrule
+  penalty (obstacles in the cost) & bag ciclo 436 & 60 & \textbf{67} / 20 & 146 / 6 & $2.2\times$ \\
+  penalty (obstacles in the cost) & centred\_pillar & 60 & \textbf{89} / 23 & \emph{fail} (860 ms) & --- \\
+  penalty (obstacles in the cost) & narrow\_gap & 60 & \textbf{225} / 77 & 275 / 7 & $1.2\times$ \\
+  $\ell^1$ (obstacles as constraints) & bag ciclo 436 & 300 & \textbf{146} / 35 & 9307 / 16 & $63.6\times$ \\
+  $\ell^1$ (obstacles as constraints) & centred\_pillar & 300 & \textbf{173} / 46 & \emph{fail} (13.2 s) & --- \\
+  $\ell^1$ (obstacles as constraints) & narrow\_gap & 300 & \textbf{162} / 45 & \emph{fail} (11.1 s) & --- \\
+  \bottomrule
+\end{tabular}

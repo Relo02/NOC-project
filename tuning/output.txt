@@ -1,0 +1,22 @@
+
+############################################################
+# Bayesian MPC Tuner — Go2 Gazebo
+# Trials: 40  |  Random init: 10  |  TPE-guided: 30
+# Scenarios per trial: 6
+# Parameters: 6
+# Est. time: ~12.3h
+# Results: /media/lorenzo/writable/tuning_results
+#
+# [OK]  scikit-learn 1.7.2 — GP surrogate active from trial 11
+############################################################
+
+
+============================================================
+  Trial 001/40  [RANDOM INIT]  22:32:09
+  {'grid_std': '0.117', 'mpc_Q_terminal': '235.000', 'mpc_Q_x': '343.284', 'mpc_Q_y': '447.767', 'mpc_Q_yaw': '9.340', 'mpc_W_obs_sigmoid': '334.779'}
+============================================================
+
+  ── Scenario 1/6: open_square  (3 goals, final 0.0,6.0)  weight=0.10 ──
+    [setup] waiting 10 s for Gazebo bridge…
+
+[Interrupted] Saving partial results…

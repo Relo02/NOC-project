@@ -1,0 +1,3 @@
+split,messages,time_span_s,freq_hz_est,numeric_fields
+training,3634,39050.0379281044,0.09306008887086387,1
+inference,917,140.83908438682556,6.510976722068057,1

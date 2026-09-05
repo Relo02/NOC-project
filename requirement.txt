@@ -1,0 +1,3 @@
+pip install --upgrade pip
+pip install numpy==1.24.4 scipy hyperopt
+pip install scikit-learn

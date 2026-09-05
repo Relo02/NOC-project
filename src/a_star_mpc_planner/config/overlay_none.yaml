@@ -1,0 +1,6 @@
+# Empty overlay: it is the default of `planner_overlay:=` in the G1 launch.
+# ROS 2 merges parameter files in the order they appear in the `parameters=[...]`
+# list, and the last one wins. A valid file is needed even when nothing is to be
+# overridden, because an empty string is not an acceptable path.
+/**:
+  ros__parameters: {}

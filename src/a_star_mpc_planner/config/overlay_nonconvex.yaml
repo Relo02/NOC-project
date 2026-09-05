@@ -1,0 +1,98 @@
+# Overlay for the worlds with NON-CONVEX obstacles (long_wall, horseshoe,
+# dead_end and the others in g1_sim/mujoco_world.py). It is used like this:
+#
+#   ros2 launch g1_sim g1_a_star_mpc.launch.py world:=horseshoe \
+#        planner_overlay:=$(ros2 pkg prefix a_star_mpc_planner)/share/a_star_mpc_planner/config/overlay_nonconvex.yaml
+#
+# WHY IT IS NEEDED. A* plans on a moving window 2*grid_half_width wide, centred
+# on the robot. If the goal falls outside that window it is projected onto the
+# border, and with a concave obstacle that projection points straight into the
+# trap: the planner cannot go around what it does not see.
+#
+# Measured in CLOSED LOOP (metrics/common.closed_loop, one run per cell):
+#
+#   grid_half_width   long_wall          horseshoe    dead_end
+#   6.0 (default)     blocked            blocked      blocked
+#   8.0               GOES THROUGH wall  goal ok      blocked
+#   10.0              goal ok            goal ok      goal ok   <- adopted
+#   14.0              goal ok            goal ok      goal ok
+#
+# 10.0 is the value adopted, and it is the one the whole metrics/escape_test.py
+# campaign runs with. The deciding case is l_corridor, the world with the
+# longest foot: from the top of the foot (6.5, 11) the corridor entrance is at
+# (-2, 0), i.e. 8.5 m in x and 11 m in y, and the radial projection of the goal
+# onto the window border alone does not get out of it. With the geodesic metric
+# on the local target the plan exists anyway: goal reached in 112.7 s, minimum
+# clearance 0.80 m (escape_all_hw10.json, row l_corridor/geodesic).
+#
+# COST, and why one does not go higher. grid_reso stays the one of the profile
+# (0.20), so at hw=10 the grid is 100x100 and a plan costs ~140 ms against the
+# ~50 ms of the default: inside the replanning period (replan_rate_hz 1.0), but
+# not free. Going higher gets expensive very quickly, because the weight is not
+# A* itself but the update of the Gaussian grid over ~2000 obstacle points.
+# Measured on the worst case (l_corridor from the top of the foot):
+#
+#   hw   reso   cells     ms
+#   14   0.20   140x140   1838   MORE than the replanning period
+#   14   0.25   112x112   1031
+#   14   0.30    93x93     645
+#   14   0.35    80x80     504
+#
+# At hw=14 the window would only become usable by thinning the grid, and at
+# reso 0.35 a free channel of 0.9 m (the narrow passage of
+# long_wall_false_north) would drop to ~2.6 cells, too few for A* to handle it
+# reliably.
+#
+# Widening the window does NOT weaken the traps: since perception became
+# limited, the trap depends on the LIDAR RANGE (8 m) and not on the planning
+# window — space never seen stays optimistically free either way. The window
+# only decides how far A* can trace a way out over what it already knows. The
+# "GOES THROUGH wall" cell is a FALSE success: the harness plant has no
+# collisions, the proportional fallback aimed at the last A* waypoint beyond the
+# wall and went through it (clearance 0.033 m). See
+# metrics/common.check_collisions — a goal reached must always be read together
+# with the clearance.
+#
+# The threshold is not universal: it depends on how large the concave obstacle
+# is with respect to the window. The rule of thumb is that the window must
+# contain the WHOLE obstacle plus the way out, not just the face the robot sees.
+#
+# This is why the wide window is not the default of the profile: it is paid on
+# every cycle, including in the convex worlds that do not need it.
+#
+# ALTERNATIVE WORTH TRYING FIRST: nav_graph:=true. The global topological memory
+# exists precisely to remember structure beyond the window, and these worlds are
+# the test it has never had. If that is enough, the window can stay at 6.0 and
+# the extra ~90 ms are saved.
+# ─────────────────────────────────────────────────────────────────────────
+# map_decay_sec: 0 — THE MEMORY MUST NOT EXPIRE
+#
+# PersistentOccupancyMap evicts every cell not re-confirmed within
+# map_decay_sec (20 s in the G1 profile). On a concave obstacle that is fatal:
+# the back of the horseshoe is only visible from INSIDE, so as soon as the robot
+# comes out and follows an arm it stops re-confirming it. After 20 s the cell is
+# evicted, the U goes back to "open" in the map, the recomputed geodesic sends
+# the robot straight through it, and it GOES BACK IN. Ping-pong with a period of
+# ~20 s.
+#
+# It can be measured on the clock: leaving the U (4 m) and reaching mid-arm
+# (6 m) is ~10 m at ~0.28 m/s = 36 s, and the re-entry is observed exactly at
+# mid-arm.
+#
+# No tabu can fix this: tabu penalises places already visited, but here the
+# problem is not the choice, it is that the MAP IS WRONG — the wall is no longer
+# there. First one repairs what the robot knows, then, if needed, how it decides.
+#
+# Time decay is there for DYNAMIC obstacles (people), but the criterion is wrong
+# to begin with: it evicts the cells that have not been LOOKED AT, not the ones
+# that have been seen EMPTY. A wall behind you is no less real because you are
+# not looking at it. The correct form is ray clearing (a cell is erased when a
+# ray passes through it). Until that exists, everything is kept here: these
+# worlds are static.
+#
+# NOTE: with `people:=` do NOT use 0 — people would leave permanent trails. In
+# that case raise it to 120-300 s instead of zeroing it.
+/**:
+  ros__parameters:
+    grid_half_width: 10.0
+    map_decay_sec: 0.0

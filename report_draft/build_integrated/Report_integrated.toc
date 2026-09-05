@@ -1,0 +1,78 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{Acronyms and notation}{3}{section*.1}%
+\contentsline {section}{\numberline {1}Introduction}{4}{section.1}%
+\contentsline {section}{\numberline {2}Problem description and modeling}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}System overview}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}The controlled platforms}{5}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Low-level locomotion layers}{5}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Model-based gait generation: CHAMP on the Go2}{6}{subsubsection.2.3.1}%
+\contentsline {paragraph}{Pattern modulation.}{6}{paragraph*.4}%
+\contentsline {paragraph}{Where the command enters.}{6}{paragraph*.6}%
+\contentsline {paragraph}{Foot trajectories and impedance.}{6}{paragraph*.9}%
+\contentsline {paragraph}{Low level joint controllers modelled as a lag.}{7}{paragraph*.14}%
+\contentsline {subsubsection}{\numberline {2.3.2}Learned whole-body control: the AMO policy on the G1}{7}{subsubsection.2.3.2}%
+\contentsline {paragraph}{Structure.}{8}{paragraph*.15}%
+\contentsline {subsubsection}{\numberline {2.3.3}The cascade and its abstraction seam}{8}{subsubsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.4}Environment representation}{9}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Plant model and state-space formulation}{9}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Navigation problem statement}{10}{subsection.2.6}%
+\contentsline {section}{\numberline {3}Formulation of the optimization program}{11}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Division of labour: motion planning against trajectory optimisation}{11}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Reference generation: $A^\star ${} as a discrete program}{11}{subsection.3.2}%
+\contentsline {paragraph}{What the discrete layer is for.}{11}{paragraph*.28}%
+\contentsline {paragraph}{Memory: the accumulated map.}{12}{paragraph*.29}%
+\contentsline {paragraph}{Choosing the target inside the window.}{12}{paragraph*.30}%
+\contentsline {paragraph}{The metric: geodesic distance.}{13}{paragraph*.33}%
+\contentsline {paragraph}{Commitment between replanning cycles.}{13}{paragraph*.36}%
+\contentsline {subsection}{\numberline {3.3}Model discretization}{13}{subsection.3.3}%
+\contentsline {paragraph}{Error against the discretization scheme.}{14}{paragraph*.39}%
+\contentsline {paragraph}{The modelling floor.}{15}{paragraph*.41}%
+\contentsline {paragraph}{Closed-loop analysis.}{15}{paragraph*.42}%
+\contentsline {subsection}{\numberline {3.4}The nonlinear MPC program}{15}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Decision variables, cost, and the parametrisation of the program}{15}{subsubsection.3.4.1}%
+\contentsline {paragraph}{Comparison between multiple and single shooting.}{16}{paragraph*.46}%
+\contentsline {subsubsection}{\numberline {3.4.2}Obstacle avoidance as a smooth penalty}{16}{subsubsection.3.4.2}%
+\contentsline {paragraph}{Sentinel padding.}{18}{paragraph*.51}%
+\contentsline {subsubsection}{\numberline {3.4.3}Predicting moving obstacles: a constant-velocity Kalman filter}{18}{subsubsection.3.4.3}%
+\contentsline {subsubsection}{\numberline {3.4.4}The obstacle as a true constraint: exact $\ell ^1$ penalty}{19}{subsubsection.3.4.4}%
+\contentsline {paragraph}{What it would cost to deploy.}{19}{paragraph*.57}%
+\contentsline {subsubsection}{\numberline {3.4.5}Constraints}{19}{subsubsection.3.4.5}%
+\contentsline {subsubsection}{\numberline {3.4.6}Terminal ingredients and recursive feasibility}{20}{subsubsection.3.4.6}%
+\contentsline {subsubsection}{\numberline {3.4.7}On the absence of integral action}{21}{subsubsection.3.4.7}%
+\contentsline {section}{\numberline {4}Optimization methodology}{21}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Problem dimensions and structure}{21}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Solver methodology}{22}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Overview}{22}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Derivative computation}{22}{subsubsection.4.2.2}%
+\contentsline {paragraph}{Exact Hessian against BFGS.}{23}{paragraph*.66}%
+\contentsline {subsubsection}{\numberline {4.2.3}Interior point and active set comparison}{23}{subsubsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.3}Optimality conditions on the deployed problem}{24}{subsection.4.3}%
+\contentsline {paragraph}{Shape of the active set.}{24}{paragraph*.70}%
+\contentsline {subsection}{\numberline {4.4}Implementation and configuration}{24}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Offline weight tuning by Bayesian optimization}{26}{subsection.4.5}%
+\contentsline {paragraph}{The objective.}{26}{paragraph*.74}%
+\contentsline {paragraph}{Per-axis surrogates and coordinate descent.}{26}{paragraph*.76}%
+\contentsline {paragraph}{What the procedure can be expected to gain.}{27}{paragraph*.80}%
+\contentsline {section}{\numberline {5}Results and solver performance}{27}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Experimental setup}{27}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}The cost landscape in state and decision space}{27}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Horizon design: prediction horizon, sampling time and control horizon}{28}{subsection.5.3}%
+\contentsline {paragraph}{Control horizon.}{28}{paragraph*.85}%
+\contentsline {paragraph}{The three parameters together.}{30}{paragraph*.86}%
+\contentsline {paragraph}{On move blocking.}{30}{paragraph*.87}%
+\contentsline {paragraph}{How far these numbers carry.}{30}{paragraph*.88}%
+\contentsline {subsection}{\numberline {5.4}Non-convex obstacles and the local-target rule}{30}{subsection.5.4}%
+\contentsline {subsubsection}{\numberline {5.4.1}What is being measured}{30}{subsubsection.5.4.1}%
+\contentsline {subsubsection}{\numberline {5.4.2}Results}{30}{subsubsection.5.4.2}%
+\contentsline {paragraph}{The traps.}{32}{paragraph*.91}%
+\contentsline {paragraph}{The two long-wall worlds.}{32}{paragraph*.92}%
+\contentsline {paragraph}{Reachability of the selected target.}{33}{paragraph*.93}%
+\contentsline {paragraph}{The controls.}{33}{paragraph*.94}%
+\contentsline {paragraph}{The memory term.}{33}{paragraph*.95}%
+\contentsline {paragraph}{Cost of the repair.}{33}{paragraph*.96}%
+\contentsline {subsection}{\numberline {5.5}Weight tuning in closed loop: the per-axis sweep}{33}{subsection.5.5}%
+\contentsline {section}{\numberline {6}Simulation and hardware deployment}{35}{section.6}%
+\contentsline {paragraph}{Simulation setting.}{35}{paragraph*.98}%
+\contentsline {paragraph}{Hardware deployment.}{35}{paragraph*.102}%
+\contentsline {paragraph}{On model mismatch, and why it was not analysed further.}{35}{paragraph*.103}%
+\contentsline {section}{\numberline {7}Conclusions}{38}{section.7}%

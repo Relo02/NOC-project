@@ -1,0 +1,53 @@
+# Parameters of the MuJoCo simulator of the G1.
+/**:
+  ros__parameters:
+    # Kinematic mode: the base is integrated from /cmd_vel, with no physics and no
+    # bipedal controller. The plant is identical to the MPC model.
+    physics:        false
+    viewer:         true
+
+    sim_rate_hz:    100.0
+    lidar_rate_hz:  10.0
+    js_rate_hz:     30.0
+
+    # Initial pose in the industrial warehouse.
+    spawn_x:       -12.0
+    spawn_y:         0.0
+    spawn_yaw:       0.0
+    base_height:     0.793   # pelvis height when standing (from the MJCF)
+
+    # Simulated Mid-360. The elevation in simulation (-34..+52 degrees) is more
+    # generous than the real one (-7..+52): the rear blind cone exists in both
+    # cases, and it is the physical reason for the vx >= 0 constraint in the MPC.
+    lidar_h_samples: 360
+    lidar_v_samples:  24
+    lidar_v_min:     -0.60
+    lidar_v_max:      0.9076
+    lidar_range_min:  0.20
+    lidar_range_max: 40.0
+    lidar_noise_std:  0.01
+
+    odom_frame:   odom
+    base_frame:   base_link
+    # NOT 'mid360_link': that name belongs to the URDF, which attaches it to
+    # torso_link at z=0.41618. The MuJoCo site the rays actually start from sits
+    # at z=0.40618 — 1 cm lower. If the two frames had the same name,
+    # 'mid360_link' would have TWO parents (odom from here, torso_link from
+    # robot_state_publisher): TF would no longer be a tree and RViz could not
+    # place anything. With a name of its own, the transform published by this node
+    # stays exact by construction — it comes from the same pose that casts the
+    # rays — and the URDF keeps its own.
+    lidar_frame:  mid360_sim
+
+    # Plant saturations. Consistent with the AMO envelope (0.5 / 0.4): the G1 MPC
+    # profile stays below it (0.4 / 0.4), so it never saturates here — and rightly
+    # so, the saturation of the plant must not mask an inadmissible plan.
+
+    vx_limit:  0.5
+    vy_limit:  0.5
+    wz_limit:  0.4
+    cmd_timeout: 1.0
+
+    # Dynamic obstacles. '' = none; 'default' = 3 test people.
+    # Useful for the scenarios with moving obstacles.
+    people: ''

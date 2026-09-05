@@ -1,0 +1,427 @@
+\relax 
+\providecommand{\transparent@use}[1]{}
+\providecommand\babel@aux[2]{}
+\@nameuse{bbl@beforestart}
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\bibstyle{plain}
+\transparent@use{.4}
+\babel@aux{english}{}
+\@writefile{toc}{\contentsline {section}{Acronyms and notation}{3}{section*.1}\protected@file@percent }
+\citation{rawlings2017mpc}
+\citation{champ}
+\citation{li2025amo}
+\citation{andersson2019casadi}
+\citation{wachter2006ipopt}
+\citation{rasmussen2006gp,shahriari2016bo}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{4}{section.1}\protected@file@percent }
+\newlabel{sec:intro}{{1}{4}{Introduction}{section.1}{}}
+\newlabel{sec:intro@cref}{{[section][1][]1}{[1][4][]4}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Problem description and modeling}{4}{section.2}\protected@file@percent }
+\newlabel{sec:problem}{{2}{4}{Problem description and modeling}{section.2}{}}
+\newlabel{sec:problem@cref}{{[section][2][]2}{[1][4][]4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}System overview}{4}{subsection.2.1}\protected@file@percent }
+\newlabel{sec:overview}{{2.1}{4}{System overview}{subsection.2.1}{}}
+\newlabel{sec:overview@cref}{{[subsection][1][2]2.1}{[1][4][]4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}The controlled platforms}{5}{subsection.2.2}\protected@file@percent }
+\newlabel{sec:platforms}{{2.2}{5}{The controlled platforms}{subsection.2.2}{}}
+\newlabel{sec:platforms@cref}{{[subsection][2][2]2.2}{[1][4][]5}}
+\newlabel{fig:platform-go2}{{1a}{5}{Subfigure 1a}{subfigure.1.1}{}}
+\newlabel{sub@fig:platform-go2}{{(a)}{a}{Subfigure 1a\relax }{subfigure.1.1}{}}
+\newlabel{fig:platform-go2@cref}{{[subfigure][1][1]1a}{[1][5][]5}}
+\newlabel{fig:platform-g1}{{1b}{5}{Subfigure 1b}{subfigure.1.2}{}}
+\newlabel{sub@fig:platform-g1}{{(b)}{b}{Subfigure 1b\relax }{subfigure.1.2}{}}
+\newlabel{fig:platform-g1@cref}{{[subfigure][2][1]1b}{[1][5][]5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces The two platforms on which the same navigation stack is deployed. (a) The Go2 quadruped, with its LiDAR mounted on the head. (b) The G1 humanoid, to which the stack was ported without changing the optimization program: only the constants of the actuator-lag model~\eqref  {eq:lagcont} and the command mapping of Section~\ref {sec:g1rl} differ.}}{5}{figure.caption.2}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:platforms}{{1}{5}{The two platforms on which the same navigation stack is deployed. (a) The Go2 quadruped, with its LiDAR mounted on the head. (b) The G1 humanoid, to which the stack was ported without changing the optimization program: only the constants of the actuator-lag model~\eqref {eq:lagcont} and the command mapping of Section~\ref {sec:g1rl} differ}{figure.caption.2}{}}
+\newlabel{fig:platforms@cref}{{[figure][1][]1}{[1][5][]5}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {Unitree Go2 quadruped}}}{5}{subfigure.1.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {Unitree G1 humanoid}}}{5}{subfigure.1.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces The two platforms as the controller sees them. The rows above the first rule are properties of the machine, those between the rules are properties of the locomotion layer that receives the MPC command, and those below are the ones that enter the optimization program: the prediction model~\eqref  {eq:lagcont}, the admissible input set and the horizon. The three time constants take the same value on both machines and were identified on neither: what the two platforms share is the structure of the abstraction and not a measurement, and that is the concrete form the ``robot-agnostic'' claim takes.}}{5}{table.caption.3}\protected@file@percent }
+\newlabel{tab:platforms}{{1}{5}{The two platforms as the controller sees them. The rows above the first rule are properties of the machine, those between the rules are properties of the locomotion layer that receives the MPC command, and those below are the ones that enter the optimization program: the prediction model~\eqref {eq:lagcont}, the admissible input set and the horizon. The three time constants take the same value on both machines and were identified on neither: what the two platforms share is the structure of the abstraction and not a measurement, and that is the concrete form the ``robot-agnostic'' claim takes}{table.caption.3}{}}
+\newlabel{tab:platforms@cref}{{[table][1][]1}{[1][5][]5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Low-level locomotion layers}{5}{subsection.2.3}\protected@file@percent }
+\newlabel{sec:lowlevel}{{2.3}{5}{Low-level locomotion layers}{subsection.2.3}{}}
+\newlabel{sec:lowlevel@cref}{{[subsection][3][2]2.3}{[1][5][]5}}
+\citation{champ}
+\citation{lee2013hierarchical,hyun2014trot}
+\citation{raibert1986legged}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.1}Model-based gait generation: CHAMP on the Go2}{6}{subsubsection.2.3.1}\protected@file@percent }
+\newlabel{sec:champ}{{2.3.1}{6}{Model-based gait generation: CHAMP on the Go2}{subsubsection.2.3.1}{}}
+\newlabel{sec:champ@cref}{{[subsubsection][1][2,3]2.3.1}{[1][6][]6}}
+\@writefile{toc}{\contentsline {paragraph}{Pattern modulation.}{6}{paragraph*.4}\protected@file@percent }
+\newlabel{eq:gaitphase}{{1}{6}{Pattern modulation}{equation.2.1}{}}
+\newlabel{eq:gaitphase@cref}{{[equation][1][]1}{[1][6][]6}}
+\@writefile{toc}{\contentsline {paragraph}{Where the command enters.}{6}{paragraph*.6}\protected@file@percent }
+\newlabel{eq:raibert}{{2}{6}{Where the command enters}{equation.2.2}{}}
+\newlabel{eq:raibert@cref}{{[equation][2][]2}{[1][6][]6}}
+\newlabel{eq:steplen}{{3}{6}{Where the command enters}{equation.2.3}{}}
+\newlabel{eq:steplen@cref}{{[equation][3][]3}{[1][6][]6}}
+\@writefile{toc}{\contentsline {paragraph}{Foot trajectories and impedance.}{6}{paragraph*.9}\protected@file@percent }
+\newlabel{eq:stance}{{4}{6}{Foot trajectories and impedance}{equation.2.4}{}}
+\newlabel{eq:stance@cref}{{[equation][4][]4}{[1][6][]6}}
+\newlabel{eq:swing}{{5}{6}{Foot trajectories and impedance}{equation.2.5}{}}
+\newlabel{eq:swing@cref}{{[equation][5][]5}{[1][6][]6}}
+\citation{champ}
+\citation{champ}
+\citation{li2025amo}
+\newlabel{eq:impedance}{{6}{7}{Foot trajectories and impedance}{equation.2.6}{}}
+\newlabel{eq:impedance@cref}{{[equation][6][]6}{[1][6][]7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Geometry of the CHAMP gait on a single leg, seen from the side. The dotted closed curve is the cycle described by the foot in its trajectory frame: the upper branch is the swing Bézier~\eqref  {eq:swing}, which clears the ground by the swing height $h_{\mathrm  {sw}}$, and the lower branch is the stance arc~\eqref  {eq:stance}, which presses into the ground by the stance height $h_{\mathrm  {st}}$ and sweeps backwards to carry the trunk forward. The horizontal extent of the cycle is the step length $L_i$ of~\eqref  {eq:steplen}, the only channel through which the commanded twist reaches the leg; the reference point on the ground line is the nominal stance position $\bar  p^{\mathrm  {f}}_i$ about which the Raibert half-step~\eqref  {eq:raibert} displaces the cycle, and the walking height is the nominal trunk height $h_0$. Adapted from the CHAMP documentation \cite  {champ}.}}{7}{figure.caption.13}\protected@file@percent }
+\newlabel{fig:gaitparams}{{2}{7}{Geometry of the CHAMP gait on a single leg, seen from the side. The dotted closed curve is the cycle described by the foot in its trajectory frame: the upper branch is the swing Bézier~\eqref {eq:swing}, which clears the ground by the swing height $h_{\mathrm {sw}}$, and the lower branch is the stance arc~\eqref {eq:stance}, which presses into the ground by the stance height $h_{\mathrm {st}}$ and sweeps backwards to carry the trunk forward. The horizontal extent of the cycle is the step length $L_i$ of~\eqref {eq:steplen}, the only channel through which the commanded twist reaches the leg; the reference point on the ground line is the nominal stance position $\bar \pf _i$ about which the Raibert half-step~\eqref {eq:raibert} displaces the cycle, and the walking height is the nominal trunk height $h_0$. Adapted from the CHAMP documentation \cite {champ}}{figure.caption.13}{}}
+\newlabel{fig:gaitparams@cref}{{[figure][2][]2}{[1][7][]7}}
+\@writefile{toc}{\contentsline {paragraph}{Low level joint controllers modelled as a lag.}{7}{paragraph*.14}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.2}Learned whole-body control: the AMO policy on the G1}{7}{subsubsection.2.3.2}\protected@file@percent }
+\newlabel{sec:g1rl}{{2.3.2}{7}{Learned whole-body control: the AMO policy on the G1}{subsubsection.2.3.2}{}}
+\newlabel{sec:g1rl@cref}{{[subsubsection][2][2,3]2.3.2}{[1][7][]7}}
+\citation{schulman2017ppo}
+\citation{rudin2022walk}
+\@writefile{toc}{\contentsline {paragraph}{Structure.}{8}{paragraph*.15}\protected@file@percent }
+\newlabel{eq:rlpolicy}{{7}{8}{Structure}{equation.2.7}{}}
+\newlabel{eq:rlpolicy@cref}{{[equation][7][]7}{[1][8][]8}}
+\newlabel{eq:rlpd}{{8}{8}{Structure}{equation.2.8}{}}
+\newlabel{eq:rlpd@cref}{{[equation][8][]8}{[1][8][]8}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.3}The cascade and its abstraction seam}{8}{subsubsection.2.3.3}\protected@file@percent }
+\newlabel{sec:cascade}{{2.3.3}{8}{The cascade and its abstraction seam}{subsubsection.2.3.3}{}}
+\newlabel{sec:cascade@cref}{{[subsubsection][3][2,3]2.3.3}{[1][8][]8}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Cascaded structure of the controller, from the goal down to joint torques. The rates fall by roughly a decade at every seam ($1$~Hz, $8$~Hz, $20$~Hz, $50$--$200$~Hz, motor-driver rate), which is what allows the layers to be designed separately, and the two branches inside the dashed box, a hand-designed gait generator and a learned policy, are interchangeable precisely because they present the same twist interface $u$.}}{8}{figure.caption.18}\protected@file@percent }
+\newlabel{fig:cascade}{{3}{8}{Cascaded structure of the controller, from the goal down to joint torques. The rates fall by roughly a decade at every seam ($1$~Hz, $8$~Hz, $20$~Hz, $50$--$200$~Hz, motor-driver rate), which is what allows the layers to be designed separately, and the two branches inside the dashed box, a hand-designed gait generator and a learned policy, are interchangeable precisely because they present the same twist interface $u$}{figure.caption.18}{}}
+\newlabel{fig:cascade@cref}{{[figure][3][]3}{[1][8][]8}}
+\citation{koenig2005dstarlite}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Environment representation}{9}{subsection.2.4}\protected@file@percent }
+\newlabel{sec:grid}{{2.4}{9}{Environment representation}{subsection.2.4}{}}
+\newlabel{sec:grid@cref}{{[subsection][4][2]2.4}{[1][8][]9}}
+\newlabel{eq:grid}{{9}{9}{Environment representation}{equation.2.9}{}}
+\newlabel{eq:grid@cref}{{[equation][9][]9}{[1][8][]9}}
+\newlabel{eq:phi}{{10}{9}{Environment representation}{equation.2.10}{}}
+\newlabel{eq:phi@cref}{{[equation][10][]10}{[1][9][]9}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Left: the Gaussian inflation model~\eqref  {eq:grid} for four values of $\sigma $, the deployed one in bold, with the hard threshold $P_{\mathrm  {thr}}=0.10$ and the blocking radius $d_{\mathrm  {block}}=\sigma \,\Phi ^{-1}(1-P_{\mathrm  {thr}})=0.40$~m it implies. Right, on a logarithmic scale: the soft traversal-cost multiplier $1+w_{\mathrm  {obs}}(P/P_{\mathrm  {thr}})^2$ of the $A^\star ${} edge cost~\eqref  {eq:astarcost}, which is what actually keeps the path away from walls; the deployed value is $w_{\mathrm  {obs}}=35$. Both panels are drawn from the deployed profile \texttt  {planner\_params\_g1.yaml}{} rather than from hand-set values.}}{9}{figure.caption.21}\protected@file@percent }
+\newlabel{fig:occprofile}{{4}{9}{Left: the Gaussian inflation model~\eqref {eq:grid} for four values of $\sigma $, the deployed one in bold, with the hard threshold $P_{\mathrm {thr}}=0.10$ and the blocking radius $d_{\mathrm {block}}=\sigma \,\Phi ^{-1}(1-P_{\mathrm {thr}})=0.40$~m it implies. Right, on a logarithmic scale: the soft traversal-cost multiplier $1+w_{\mathrm {obs}}(P/P_{\mathrm {thr}})^2$ of the \astar {} edge cost~\eqref {eq:astarcost}, which is what actually keeps the path away from walls; the deployed value is $w_{\mathrm {obs}}=35$. Both panels are drawn from the deployed profile \resProfile {} rather than from hand-set values}{figure.caption.21}{}}
+\newlabel{fig:occprofile@cref}{{[figure][4][]4}{[1][9][]9}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Plant model and state-space formulation}{9}{subsection.2.5}\protected@file@percent }
+\newlabel{sec:model}{{2.5}{9}{Plant model and state-space formulation}{subsection.2.5}{}}
+\newlabel{sec:model@cref}{{[subsection][5][2]2.5}{[1][9][]9}}
+\newlabel{eq:state}{{11}{9}{Plant model and state-space formulation}{equation.2.11}{}}
+\newlabel{eq:state@cref}{{[equation][11][]11}{[1][9][]9}}
+\newlabel{eq:lagcont}{{12}{9}{Plant model and state-space formulation}{equation.2.12}{}}
+\newlabel{eq:lagcont@cref}{{[equation][12][]12}{[1][9][]9}}
+\newlabel{eq:kincont}{{13}{10}{Plant model and state-space formulation}{equation.2.13}{}}
+\newlabel{eq:kincont@cref}{{[equation][13][]13}{[1][9][]10}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.6}Navigation problem statement}{10}{subsection.2.6}\protected@file@percent }
+\newlabel{sec:statement}{{2.6}{10}{Navigation problem statement}{subsection.2.6}{}}
+\newlabel{sec:statement@cref}{{[subsection][6][2]2.6}{[1][10][]10}}
+\newlabel{eq:ocp}{{14}{10}{Navigation problem statement}{equation.2.14}{}}
+\newlabel{eq:ocp@cref}{{[subequation][14][]14}{[1][10][]10}}
+\newlabel{eq:ocp-cost}{{14a}{10}{Navigation problem statement}{equation.2.14a}{}}
+\newlabel{eq:ocp-cost@cref}{{[subequation][1][14]14a}{[1][10][]10}}
+\newlabel{eq:ocp-dyn}{{14b}{10}{Navigation problem statement}{equation.2.14b}{}}
+\newlabel{eq:ocp-dyn@cref}{{[subequation][2][14]14b}{[1][10][]10}}
+\newlabel{eq:ocp-init}{{14c}{10}{Navigation problem statement}{equation.2.14c}{}}
+\newlabel{eq:ocp-init@cref}{{[subequation][3][14]14c}{[1][10][]10}}
+\newlabel{eq:ocp-input}{{14d}{10}{Navigation problem statement}{equation.2.14d}{}}
+\newlabel{eq:ocp-input@cref}{{[subequation][4][14]14d}{[1][10][]10}}
+\newlabel{eq:ocp-obs}{{14e}{10}{Navigation problem statement}{equation.2.14e}{}}
+\newlabel{eq:ocp-obs@cref}{{[subequation][5][14]14e}{[1][10][]10}}
+\citation{hart1968astar}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Formulation of the optimization program}{11}{section.3}\protected@file@percent }
+\newlabel{sec:formulation}{{3}{11}{Formulation of the optimization program}{section.3}{}}
+\newlabel{sec:formulation@cref}{{[section][3][]3}{[1][11][]11}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Division of labour: motion planning against trajectory optimisation}{11}{subsection.3.1}\protected@file@percent }
+\newlabel{sec:division}{{3.1}{11}{Division of labour: motion planning against trajectory optimisation}{subsection.3.1}{}}
+\newlabel{sec:division@cref}{{[subsection][1][3]3.1}{[1][11][]11}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Reference generation: $A^\star ${} as a discrete program}{11}{subsection.3.2}\protected@file@percent }
+\newlabel{sec:astar}{{3.2}{11}{Reference generation: \texorpdfstring {\astar {}}{A*} as a discrete program}{subsection.3.2}{}}
+\newlabel{sec:astar@cref}{{[subsection][2][3]3.2}{[1][11][]11}}
+\newlabel{eq:astarcost}{{15}{11}{Reference generation: \texorpdfstring {\astar {}}{A*} as a discrete program}{equation.3.15}{}}
+\newlabel{eq:astarcost@cref}{{[equation][15][]15}{[1][11][]11}}
+\@writefile{toc}{\contentsline {paragraph}{What the discrete layer is for.}{11}{paragraph*.28}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Rolling-horizon local goal selection (left) and the corresponding occupancy grid with the $A^\star ${} path (right). The window $\mathcal  {W}(\hat  x)$ is re-centred on the robot every replanning cycle rather than covering the whole map, so when the global goal $x_g$ falls outside it a local target is projected onto the window boundary along the ray towards $x_g$ and $A^\star ${} plans only up to that point. This is what keeps the discrete search cheap regardless of how far the goal actually is, at the cost of the target rule discussed next.}}{12}{figure.caption.27}\protected@file@percent }
+\newlabel{fig:astargrid}{{5}{12}{Rolling-horizon local goal selection (left) and the corresponding occupancy grid with the \astar {} path (right). The window $\mathcal {W}(\hat x)$ is re-centred on the robot every replanning cycle rather than covering the whole map, so when the global goal $x_g$ falls outside it a local target is projected onto the window boundary along the ray towards $x_g$ and \astar {} plans only up to that point. This is what keeps the discrete search cheap regardless of how far the goal actually is, at the cost of the target rule discussed next}{figure.caption.27}{}}
+\newlabel{fig:astargrid@cref}{{[figure][5][]5}{[1][11][]12}}
+\@writefile{toc}{\contentsline {paragraph}{Memory: the accumulated map.}{12}{paragraph*.29}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Choosing the target inside the window.}{12}{paragraph*.30}\protected@file@percent }
+\newlabel{eq:localgoalargmin}{{16}{12}{Choosing the target inside the window}{equation.3.16}{}}
+\newlabel{eq:localgoalargmin@cref}{{[equation][16][]16}{[1][12][]12}}
+\newlabel{eq:localgoal}{{17}{13}{Choosing the target inside the window}{equation.3.17}{}}
+\newlabel{eq:localgoal@cref}{{[equation][17][]17}{[1][12][]13}}
+\@writefile{toc}{\contentsline {paragraph}{The metric: geodesic distance.}{13}{paragraph*.33}\protected@file@percent }
+\newlabel{eq:geodesic}{{18}{13}{The metric: geodesic distance}{equation.3.18}{}}
+\newlabel{eq:geodesic@cref}{{[equation][18][]18}{[1][13][]13}}
+\@writefile{toc}{\contentsline {paragraph}{Commitment between replanning cycles.}{13}{paragraph*.36}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Model discretization}{13}{subsection.3.3}\protected@file@percent }
+\newlabel{sec:discretization}{{3.3}{13}{Model discretization}{subsection.3.3}{}}
+\newlabel{sec:discretization@cref}{{[subsection][3][3]3.3}{[1][13][]13}}
+\newlabel{eq:veldisc}{{19}{13}{Model discretization}{equation.3.19}{}}
+\newlabel{eq:veldisc@cref}{{[equation][19][]19}{[1][13][]13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces The same scene, the same window and the same observed map; only the metric of \eqref  {eq:localgoalargmin} changes. The robot sits at the mouth of a horseshoe and the map is the one it has actually accumulated by driving in, not the full world (light grey), which is what makes the failure reproducible. Left: the deployed projection~\eqref  {eq:localgoal} puts the target at the closed end, and the $\arg \min $ of the Euclidean distance over the same free boundary cells lands beside it; the two rules differ, the outcome does not, because both are $\sim \!30$~m of travel from the goal. Right: with the geodesic $d_k$ the target moves to the far side of the lower arm, $7.4$~m away, and the $A^\star ${} solution leaves the concavity. Drawn from the deployed planner and profile, not sketched.}}{14}{figure.caption.35}\protected@file@percent }
+\newlabel{fig:localtarget}{{6}{14}{The same scene, the same window and the same observed map; only the metric of \eqref {eq:localgoalargmin} changes. The robot sits at the mouth of a horseshoe and the map is the one it has actually accumulated by driving in, not the full world (light grey), which is what makes the failure reproducible. Left: the deployed projection~\eqref {eq:localgoal} puts the target at the closed end, and the $\arg \min $ of the Euclidean distance over the same free boundary cells lands beside it; the two rules differ, the outcome does not, because both are $\sim \!30$~m of travel from the goal. Right: with the geodesic $d_k$ the target moves to the far side of the lower arm, $\resFigGeoGeo $~m away, and the \astar {} solution leaves the concavity. Drawn from the deployed planner and profile, not sketched}{figure.caption.35}{}}
+\newlabel{fig:localtarget@cref}{{[figure][6][]6}{[1][13][]14}}
+\newlabel{eq:euler}{{20}{14}{Model discretization}{equation.3.20}{}}
+\newlabel{eq:euler@cref}{{[equation][20][]20}{[1][14][]14}}
+\newlabel{eq:midpoint}{{21}{14}{Model discretization}{equation.3.21}{}}
+\newlabel{eq:midpoint@cref}{{[equation][21][]21}{[1][14][]14}}
+\@writefile{toc}{\contentsline {paragraph}{Error against the discretization scheme.}{14}{paragraph*.39}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Median position error at the end of the horizon, over 12 horizons re-solved from a bag of data recorded during the navigation, against the exact arc on the same velocity sequence. The first row is the deployed step; the others subdivide the prediction interval without changing the input.}}{15}{table.caption.40}\protected@file@percent }
+\newlabel{res:tab:integbag}{{2}{15}{Median position error at the end of the horizon, over 12 horizons re-solved from a bag of data recorded during the navigation, against the exact arc on the same velocity sequence. The first row is the deployed step; the others subdivide the prediction interval without changing the input}{table.caption.40}{}}
+\newlabel{res:tab:integbag@cref}{{[table][2][]2}{[1][14][]15}}
+\@writefile{toc}{\contentsline {paragraph}{The modelling floor.}{15}{paragraph*.41}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Closed-loop analysis.}{15}{paragraph*.42}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Closed-loop cost with the two integrators, same profile otherwise. A positive $\Delta $ means the mid-point rule is cheaper.}}{15}{table.caption.43}\protected@file@percent }
+\newlabel{res:tab:integloop}{{3}{15}{Closed-loop cost with the two integrators, same profile otherwise. A positive $\Delta $ means the mid-point rule is cheaper}{table.caption.43}{}}
+\newlabel{res:tab:integloop@cref}{{[table][3][]3}{[1][15][]15}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}The nonlinear MPC program}{15}{subsection.3.4}\protected@file@percent }
+\newlabel{sec:nlp}{{3.4}{15}{The nonlinear MPC program}{subsection.3.4}{}}
+\newlabel{sec:nlp@cref}{{[subsection][4][3]3.4}{[1][15][]15}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.1}Decision variables, cost, and the parametrisation of the program}{15}{subsubsection.3.4.1}\protected@file@percent }
+\newlabel{sec:shoot}{{3.4.1}{15}{Decision variables, cost, and the parametrisation of the program}{subsubsection.3.4.1}{}}
+\newlabel{sec:shoot@cref}{{[subsubsection][1][3,4]3.4.1}{[1][15][]15}}
+\newlabel{eq:cost}{{23}{15}{Decision variables, cost, and the parametrisation of the program}{equation.3.23}{}}
+\newlabel{eq:cost@cref}{{[equation][23][]23}{[1][15][]15}}
+\@writefile{toc}{\contentsline {paragraph}{Comparison between multiple and single shooting.}{16}{paragraph*.46}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Multiple (M) against single (S) shooting on the same instance, at the deployed profile. Dimensions, densities and iteration counts are exact; each timing is the fastest of three cold solves, with no warm start. The table shows the comparison for the number of variables, number of constraints, the Hessian density, the number of iterations and the solve time needed by each method for different lengths of the prediction horizon $N$.}}{16}{table.caption.47}\protected@file@percent }
+\newlabel{res:tab:shoot}{{4}{16}{Multiple (M) against single (S) shooting on the same instance, at the deployed profile. Dimensions, densities and iteration counts are exact; each timing is the fastest of three cold solves, with no warm start. The table shows the comparison for the number of variables, number of constraints, the Hessian density, the number of iterations and the solve time needed by each method for different lengths of the prediction horizon $N$}{table.caption.47}{}}
+\newlabel{res:tab:shoot@cref}{{[table][4][]4}{[1][16][]16}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.2}Obstacle avoidance as a smooth penalty}{16}{subsubsection.3.4.2}\protected@file@percent }
+\newlabel{sec:barrier}{{3.4.2}{16}{Obstacle avoidance as a smooth penalty}{subsubsection.3.4.2}{}}
+\newlabel{sec:barrier@cref}{{[subsubsection][2][3,4]3.4.2}{[1][16][]16}}
+\newlabel{eq:barrier}{{24}{16}{Obstacle avoidance as a smooth penalty}{equation.3.24}{}}
+\newlabel{eq:barrier@cref}{{[equation][24][]24}{[1][16][]16}}
+\citation{ames2019cbf}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces The hybrid penalty~\eqref  {eq:barrier} against clearance, for four steepness values with the deployed $\alpha _{\mathrm  {obs}}=6.00$ in bold ($W_{\mathrm  {obs}}=120$, $r_{\mathrm  {obs}}=0.40$~m; the dotted line marks the body radius). Dashed: the sigmoid zone alone at the deployed steepness, which saturates at $W_{\mathrm  {obs}}$ and whose gradient fades inside the obstacle, the two defects the quadratic term repairs. Right, on a logarithmic scale: the curvature, which grows as $\alpha _{\mathrm  {obs}}^2$ and is what degrades the conditioning of the NLP; the notches are sign changes. Evaluated through the same function the tracker builds into the NLP, not redrawn from the formula.}}{17}{figure.caption.49}\protected@file@percent }
+\newlabel{fig:barriershape}{{7}{17}{The hybrid penalty~\eqref {eq:barrier} against clearance, for four steepness values with the deployed $\aobs =\resAobsDep $ in bold ($\Wobs =\resWobsDep $, $\robs =\resObsRDep $~m; the dotted line marks the body radius). Dashed: the sigmoid zone alone at the deployed steepness, which saturates at $\Wobs $ and whose gradient fades inside the obstacle, the two defects the quadratic term repairs. Right, on a logarithmic scale: the curvature, which grows as $\aobs ^2$ and is what degrades the conditioning of the NLP; the notches are sign changes. Evaluated through the same function the tracker builds into the NLP, not redrawn from the formula}{figure.caption.49}{}}
+\newlabel{fig:barriershape@cref}{{[figure][7][]7}{[1][17][]17}}
+\newlabel{eq:intersample}{{25}{17}{Obstacle avoidance as a smooth penalty}{equation.3.25}{}}
+\newlabel{eq:intersample@cref}{{[equation][25][]25}{[1][17][]17}}
+\citation{barshalom2001estimation}
+\@writefile{toc}{\contentsline {paragraph}{Sentinel padding.}{18}{paragraph*.51}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.3}Predicting moving obstacles: a constant-velocity Kalman filter}{18}{subsubsection.3.4.3}\protected@file@percent }
+\newlabel{sec:obspredict}{{3.4.3}{18}{Predicting moving obstacles: a constant-velocity Kalman filter}{subsubsection.3.4.3}{}}
+\newlabel{sec:obspredict@cref}{{[subsubsection][3][3,4]3.4.3}{[1][18][]18}}
+\newlabel{eq:kfpredict}{{26}{18}{Predicting moving obstacles: a constant-velocity Kalman filter}{equation.3.26}{}}
+\newlabel{eq:kfpredict@cref}{{[equation][26][]26}{[1][18][]18}}
+\newlabel{eq:kfupdate}{{27}{18}{Predicting moving obstacles: a constant-velocity Kalman filter}{equation.3.27}{}}
+\newlabel{eq:kfupdate@cref}{{[equation][27][]27}{[1][18][]18}}
+\newlabel{eq:obspredict}{{28}{18}{Predicting moving obstacles: a constant-velocity Kalman filter}{equation.3.28}{}}
+\newlabel{eq:obspredict@cref}{{[equation][28][]28}{[1][18][]18}}
+\citation{fagiano2025noc}
+\newlabel{fig:dynobs-seg}{{8a}{19}{Subfigure 8a}{subfigure.8.1}{}}
+\newlabel{sub@fig:dynobs-seg}{{(a)}{a}{Subfigure 8a\relax }{subfigure.8.1}{}}
+\newlabel{fig:dynobs-seg@cref}{{[subfigure][1][8]8a}{[1][18][]19}}
+\newlabel{fig:dynobs-isaac}{{8b}{19}{Subfigure 8b}{subfigure.8.2}{}}
+\newlabel{sub@fig:dynobs-isaac}{{(b)}{b}{Subfigure 8b\relax }{subfigure.8.2}{}}
+\newlabel{fig:dynobs-isaac@cref}{{[subfigure][2][8]8b}{[1][18][]19}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces The moving-obstacle scenario the filter of this section is built for. \textbf  {(a)} the tracker's own view as the obstacle passes: the grey mask is the segmented dynamic obstacle itself, not the floor or the wall, and its centroid is the measurement $z_j$ that feeds~\eqref  {eq:kfupdate}; sparse coloured points are individual LiDAR/depth returns. \textbf  {(b)} the corresponding Isaac Sim scene: the person-sized walking figure together with a cylinder, both synthetic dynamic obstacles inserted into the simulation to give the tracker something to segment, since nothing in the stock warehouse world moves on its own.}}{19}{figure.caption.55}\protected@file@percent }
+\newlabel{fig:dynobs}{{8}{19}{The moving-obstacle scenario the filter of this section is built for. \textbf {(a)} the tracker's own view as the obstacle passes: the grey mask is the segmented dynamic obstacle itself, not the floor or the wall, and its centroid is the measurement $z_j$ that feeds~\eqref {eq:kfupdate}; sparse coloured points are individual LiDAR/depth returns. \textbf {(b)} the corresponding Isaac Sim scene: the person-sized walking figure together with a cylinder, both synthetic dynamic obstacles inserted into the simulation to give the tracker something to segment, since nothing in the stock warehouse world moves on its own}{figure.caption.55}{}}
+\newlabel{fig:dynobs@cref}{{[figure][8][]8}{[1][18][]19}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {The dynamic obstacle, segmented}}}{19}{subfigure.8.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {The scene in simulation}}}{19}{subfigure.8.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.4}The obstacle as a true constraint: exact $\ell ^1$ penalty}{19}{subsubsection.3.4.4}\protected@file@percent }
+\newlabel{sec:l1}{{3.4.4}{19}{The obstacle as a true constraint: exact \texorpdfstring {$\ell ^1$}{l1} penalty}{subsubsection.3.4.4}{}}
+\newlabel{sec:l1@cref}{{[subsubsection][4][3,4]3.4.4}{[1][19][]19}}
+\newlabel{eq:slack}{{29}{19}{The obstacle as a true constraint: exact \texorpdfstring {$\ell ^1$}{l1} penalty}{equation.3.29}{}}
+\newlabel{eq:slack@cref}{{[equation][29][]29}{[1][19][]19}}
+\@writefile{toc}{\contentsline {paragraph}{What it would cost to deploy.}{19}{paragraph*.57}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.5}Constraints}{19}{subsubsection.3.4.5}\protected@file@percent }
+\newlabel{sec:constraints}{{3.4.5}{19}{Constraints}{subsubsection.3.4.5}{}}
+\newlabel{sec:constraints@cref}{{[subsubsection][5][3,4]3.4.5}{[1][19][]19}}
+\newlabel{eq:cons}{{30}{19}{Constraints}{equation.3.30}{}}
+\newlabel{eq:cons@cref}{{[subequation][30][]30}{[1][19][]19}}
+\newlabel{eq:cons-dyn}{{30a}{19}{Constraints}{equation.3.30a}{}}
+\newlabel{eq:cons-dyn@cref}{{[subequation][1][30]30a}{[1][19][]19}}
+\newlabel{eq:cons-init}{{30b}{19}{Constraints}{equation.3.30b}{}}
+\newlabel{eq:cons-init@cref}{{[subequation][2][30]30b}{[1][19][]19}}
+\newlabel{eq:cons-vx}{{30c}{19}{Constraints}{equation.3.30c}{}}
+\newlabel{eq:cons-vx@cref}{{[subequation][3][30]30c}{[1][19][]19}}
+\newlabel{eq:cons-vyw}{{30d}{19}{Constraints}{equation.3.30d}{}}
+\newlabel{eq:cons-vyw@cref}{{[subequation][4][30]30d}{[1][19][]19}}
+\citation{mayne2000constrained,chen1998quasi}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.6}Terminal ingredients and recursive feasibility}{20}{subsubsection.3.4.6}\protected@file@percent }
+\newlabel{sec:terminal}{{3.4.6}{20}{Terminal ingredients and recursive feasibility}{subsubsection.3.4.6}{}}
+\newlabel{sec:terminal@cref}{{[subsubsection][6][3,4]3.4.6}{[1][20][]20}}
+\newlabel{eq:terminal}{{31}{20}{Terminal ingredients and recursive feasibility}{equation.3.31}{}}
+\newlabel{eq:terminal@cref}{{[equation][31][]31}{[1][20][]20}}
+\newlabel{eq:dare}{{32}{20}{Terminal ingredients and recursive feasibility}{equation.3.32}{}}
+\newlabel{eq:dare@cref}{{[equation][32][]32}{[1][20][]20}}
+\citation{mayne2000constrained,chen1998quasi}
+\citation{rawlings2017mpc,pannocchia2003offsetfree}
+\citation{wachter2006ipopt}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.7}On the absence of integral action}{21}{subsubsection.3.4.7}\protected@file@percent }
+\newlabel{sec:integral}{{3.4.7}{21}{On the absence of integral action}{subsubsection.3.4.7}{}}
+\newlabel{sec:integral@cref}{{[subsubsection][7][3,4]3.4.7}{[1][21][]21}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Optimization methodology}{21}{section.4}\protected@file@percent }
+\newlabel{sec:optproc}{{4}{21}{Optimization methodology}{section.4}{}}
+\newlabel{sec:optproc@cref}{{[section][4][]4}{[1][21][]21}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Problem dimensions and structure}{21}{subsection.4.1}\protected@file@percent }
+\newlabel{sec:dims}{{4.1}{21}{Problem dimensions and structure}{subsection.4.1}{}}
+\newlabel{sec:dims@cref}{{[subsection][1][4]4.1}{[1][21][]21}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces NLP dimensions at the deployed configuration $N=15$, $\Delta t=0.35$~s, $M=8$.}}{22}{table.caption.61}\protected@file@percent }
+\newlabel{tab:dims}{{5}{22}{NLP dimensions at the deployed configuration $N=\resN $, $\Delta t=\resDt $~s, $M=\resMobs $}{table.caption.61}{}}
+\newlabel{tab:dims@cref}{{[table][5][]5}{[1][21][]22}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Size and sparsity of the NLP against the prediction horizon, from the deployed profile. Bold: the deployed configuration.}}{22}{table.caption.62}\protected@file@percent }
+\newlabel{res:tab:nlp}{{6}{22}{Size and sparsity of the NLP against the prediction horizon, from the deployed profile. Bold: the deployed configuration}{table.caption.62}{}}
+\newlabel{res:tab:nlp@cref}{{[table][6][]6}{[1][21][]22}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Solver methodology}{22}{subsection.4.2}\protected@file@percent }
+\newlabel{sec:solver}{{4.2}{22}{Solver methodology}{subsection.4.2}{}}
+\newlabel{sec:solver@cref}{{[subsection][2][4]4.2}{[1][21][]22}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}Overview}{22}{subsubsection.4.2.1}\protected@file@percent }
+\newlabel{sec:solveroverview}{{4.2.1}{22}{Overview}{subsubsection.4.2.1}{}}
+\newlabel{sec:solveroverview@cref}{{[subsubsection][1][4,2]4.2.1}{[1][21][]22}}
+\newlabel{eq:ipopt}{{33}{22}{Overview}{equation.4.33}{}}
+\newlabel{eq:ipopt@cref}{{[equation][33][]33}{[1][21][]22}}
+\newlabel{eq:kkt}{{34}{22}{Overview}{equation.4.34}{}}
+\newlabel{eq:kkt@cref}{{[equation][34][]34}{[1][22][]22}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2}Derivative computation}{22}{subsubsection.4.2.2}\protected@file@percent }
+\newlabel{sec:deriv}{{4.2.2}{22}{Derivative computation}{subsubsection.4.2.2}{}}
+\newlabel{sec:deriv@cref}{{[subsubsection][2][4,2]4.2.2}{[1][22][]22}}
+\citation{fagiano2025noc}
+\citation{fagiano2025noc}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Accuracy of the finite-difference gradient against the step size, measured against the AD gradient. The optimum sits at $h=1.49\times 10^{-8}$ forward (theory: $\sqrt  {\varepsilon _M}=1.49\times 10^{-8}$) and $h=6.06\times 10^{-6}$ central (theory: $\varepsilon _M^{1/3}=6.06\times 10^{-6}$).}}{23}{table.caption.65}\protected@file@percent }
+\newlabel{res:tab:fd}{{7}{23}{Accuracy of the finite-difference gradient against the step size, measured against the AD gradient. The optimum sits at $h=1.49\times 10^{-8}$ forward (theory: $\sqrt {\varepsilon _M}=1.49\times 10^{-8}$) and $h=6.06\times 10^{-6}$ central (theory: $\varepsilon _M^{1/3}=6.06\times 10^{-6}$)}{table.caption.65}{}}
+\newlabel{res:tab:fd@cref}{{[table][7][]7}{[1][22][]23}}
+\@writefile{toc}{\contentsline {paragraph}{Exact Hessian against BFGS.}{23}{paragraph*.66}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Interior-point iterations with the exact Hessian and with the limited-memory quasi-Newton approximation (L-BFGS), on the same instance. Bold: the lower iteration count.}}{23}{table.caption.67}\protected@file@percent }
+\newlabel{res:tab:hess}{{8}{23}{Interior-point iterations with the exact Hessian and with the limited-memory quasi-Newton approximation (L-BFGS), on the same instance. Bold: the lower iteration count}{table.caption.67}{}}
+\newlabel{res:tab:hess@cref}{{[table][8][]8}{[1][23][]23}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.3}Interior point and active set comparison}{23}{subsubsection.4.2.3}\protected@file@percent }
+\newlabel{sec:solvercmp}{{4.2.3}{23}{Interior point and active set comparison}{subsubsection.4.2.3}{}}
+\newlabel{sec:solvercmp@cref}{{[subsubsection][3][4,2]4.2.3}{[1][23][]23}}
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces The same three instances solved by a primal--dual interior-point method and by an SQP with an active-set QP solver, in both obstacle regimes: \emph  {penalty} keeps the obstacles in the cost, $\ell ^1$ carries them as constraints with slacks (Section~\ref {sec:l1}). Both solvers are started cold. Bold: the faster of the two. \emph  {fail} marks a run in which the active-set QP subproblem could not be solved at all. $^\dagger $the only large-regime run that returns a solution ends at an objective $0.2\%$ away from IPOPT's, so that ratio is indicative rather than an exact like-for-like comparison.}}{23}{table.caption.68}\protected@file@percent }
+\newlabel{res:tab:solvercmp}{{9}{23}{The same three instances solved by a primal--dual interior-point method and by an SQP with an active-set QP solver, in both obstacle regimes: \emph {penalty} keeps the obstacles in the cost, $\ell ^1$ carries them as constraints with slacks (Section~\ref {sec:l1}). Both solvers are started cold. Bold: the faster of the two. \emph {fail} marks a run in which the active-set QP subproblem could not be solved at all. $^\dagger $the only large-regime run that returns a solution ends at an objective $0.2\%$ away from IPOPT's, so that ratio is indicative rather than an exact like-for-like comparison}{table.caption.68}{}}
+\newlabel{res:tab:solvercmp@cref}{{[table][9][]9}{[1][23][]23}}
+\citation{fagiano2025noc}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Optimality conditions on the deployed problem}{24}{subsection.4.3}\protected@file@percent }
+\newlabel{sec:kkt}{{4.3}{24}{Optimality conditions on the deployed problem}{subsection.4.3}{}}
+\newlabel{sec:kkt@cref}{{[subsection][3][4]4.3}{[1][24][]24}}
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Optimality diagnostics at sampled cycles of the recorded mission. ``active'' counts equalities and active bounds together; ``rank'' is the rank of the Jacobian of the active constraints, so LICQ holds when the two coincide.}}{24}{table.caption.69}\protected@file@percent }
+\newlabel{res:tab:kkt}{{10}{24}{Optimality diagnostics at sampled cycles of the recorded mission. ``active'' counts equalities and active bounds together; ``rank'' is the rank of the Jacobian of the active constraints, so LICQ holds when the two coincide}{table.caption.69}{}}
+\newlabel{res:tab:kkt@cref}{{[table][10][]10}{[1][24][]24}}
+\@writefile{toc}{\contentsline {paragraph}{Shape of the active set.}{24}{paragraph*.70}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Implementation and configuration}{24}{subsection.4.4}\protected@file@percent }
+\newlabel{sec:impl}{{4.4}{24}{Implementation and configuration}{subsection.4.4}{}}
+\newlabel{sec:impl@cref}{{[subsection][4][4]4.4}{[1][24][]24}}
+\citation{diehl2005realtime}
+\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces The deployed profile \texttt  {planner\_params\_g1.yaml}{} in full. Everything the optimization program reads is here: the prediction model and the horizon, the admissible input set $\mathcal  {U}$, the eleven cost weights that make up $\theta $ in~\eqref  {eq:theta}, the discrete layer of Section~\ref {sec:astar} they are tuned against, and the solver options. The weights are the hand-set values actually shipped, not the $\hat  \theta $ of Section~\ref {sec:bo}, for the reason given in Section~\ref {sec:ofat}.}}{25}{table.caption.71}\protected@file@percent }
+\newlabel{tab:profile}{{11}{25}{The deployed profile \resProfile {} in full. Everything the optimization program reads is here: the prediction model and the horizon, the admissible input set $\mathcal {U}$, the eleven cost weights that make up $\theta $ in~\eqref {eq:theta}, the discrete layer of Section~\ref {sec:astar} they are tuned against, and the solver options. The weights are the hand-set values actually shipped, not the $\hat \theta $ of Section~\ref {sec:bo}, for the reason given in Section~\ref {sec:ofat}}{table.caption.71}{}}
+\newlabel{tab:profile@cref}{{[table][11][]11}{[1][25][]25}}
+\citation{rasmussen2006gp,shahriari2016bo}
+\citation{wright2015coordinate}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Offline weight tuning by Bayesian optimization}{26}{subsection.4.5}\protected@file@percent }
+\newlabel{sec:bo}{{4.5}{26}{Offline weight tuning by Bayesian optimization}{subsection.4.5}{}}
+\newlabel{sec:bo@cref}{{[subsection][5][4]4.5}{[1][25][]26}}
+\newlabel{eq:theta}{{35}{26}{Offline weight tuning by Bayesian optimization}{equation.4.35}{}}
+\newlabel{eq:theta@cref}{{[equation][35][]35}{[1][25][]26}}
+\newlabel{eq:outer}{{36}{26}{Offline weight tuning by Bayesian optimization}{equation.4.36}{}}
+\newlabel{eq:outer@cref}{{[equation][36][]36}{[1][26][]26}}
+\@writefile{toc}{\contentsline {paragraph}{The objective.}{26}{paragraph*.74}\protected@file@percent }
+\newlabel{eq:Jcl}{{37}{26}{The objective}{equation.4.37}{}}
+\newlabel{eq:Jcl@cref}{{[equation][37][]37}{[1][26][]26}}
+\@writefile{toc}{\contentsline {paragraph}{Per-axis surrogates and coordinate descent.}{26}{paragraph*.76}\protected@file@percent }
+\newlabel{eq:kernel}{{38}{26}{Per-axis surrogates and coordinate descent}{equation.4.38}{}}
+\newlabel{eq:kernel@cref}{{[equation][38][]38}{[1][26][]26}}
+\newlabel{eq:gppost}{{39}{26}{Per-axis surrogates and coordinate descent}{equation.4.39}{}}
+\newlabel{eq:gppost@cref}{{[equation][39][]39}{[1][26][]26}}
+\newlabel{eq:axisopt}{{40}{26}{Per-axis surrogates and coordinate descent}{equation.4.40}{}}
+\newlabel{eq:axisopt@cref}{{[equation][40][]40}{[1][26][]26}}
+\@writefile{toc}{\contentsline {paragraph}{What the procedure can be expected to gain.}{27}{paragraph*.80}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Results and solver performance}{27}{section.5}\protected@file@percent }
+\newlabel{sec:performance}{{5}{27}{Results and solver performance}{section.5}{}}
+\newlabel{sec:performance@cref}{{[section][5][]5}{[1][27][]27}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Experimental setup}{27}{subsection.5.1}\protected@file@percent }
+\newlabel{sec:setup}{{5.1}{27}{Experimental setup}{subsection.5.1}{}}
+\newlabel{sec:setup@cref}{{[subsection][1][5]5.1}{[1][27][]27}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}The cost landscape in state and decision space}{27}{subsection.5.2}\protected@file@percent }
+\newlabel{sec:landscape}{{5.2}{27}{The cost landscape in state and decision space}{subsection.5.2}{}}
+\newlabel{sec:landscape@cref}{{[subsection][2][5]5.2}{[1][27][]27}}
+\newlabel{eq:landscape}{{41}{27}{The cost landscape in state and decision space}{equation.5.41}{}}
+\newlabel{eq:landscape@cref}{{[equation][41][]41}{[1][27][]27}}
+\newlabel{eq:candJ}{{42}{27}{The cost landscape in state and decision space}{equation.5.42}{}}
+\newlabel{eq:candJ@cref}{{[equation][42][]42}{[1][27][]27}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces The navigation cost landscape of the recorded mission. \textbf  {(a)} the surface $c(p)$ of Eq.~\eqref  {eq:landscape} over the world plane, with the executed trajectory (red) and one MPC horizon (dashed) drawn \emph  {on} the surface: the obstacle term raises a ridge along every wall of the plant, the tracking term forms the valley along the $A^\star ${} reference. \textbf  {(b)} the same field as level sets, with the local minima marked and the shaded region showing the set reachable within one horizon under $\mathcal  {U}$; the constraint, not the cost, is what excludes most of the plane. \textbf  {(c)} the optimal cost $J^\star $ of each control cycle, and the solve time beside it. The point worth noticing is in panel~(a): \emph  {the trajectory does not follow steepest descent}, and climbs the surface wherever doing so lowers the sum over the horizon.}}{28}{figure.caption.82}\protected@file@percent }
+\newlabel{fig:landscape}{{9}{28}{The navigation cost landscape of the recorded mission. \textbf {(a)} the surface $c(p)$ of Eq.~\eqref {eq:landscape} over the world plane, with the executed trajectory (red) and one MPC horizon (dashed) drawn \emph {on} the surface: the obstacle term raises a ridge along every wall of the plant, the tracking term forms the valley along the \astar {} reference. \textbf {(b)} the same field as level sets, with the local minima marked and the shaded region showing the set reachable within one horizon under $\mathcal {U}$; the constraint, not the cost, is what excludes most of the plane. \textbf {(c)} the optimal cost $J^\star $ of each control cycle, and the solve time beside it. The point worth noticing is in panel~(a): \emph {the trajectory does not follow steepest descent}, and climbs the surface wherever doing so lowers the sum over the horizon}{figure.caption.82}{}}
+\newlabel{fig:landscape@cref}{{[figure][9][]9}{[1][27][]28}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Horizon design: prediction horizon, sampling time and control horizon}{28}{subsection.5.3}\protected@file@percent }
+\newlabel{sec:horizon}{{5.3}{28}{Horizon design: prediction horizon, sampling time and control horizon}{subsection.5.3}{}}
+\newlabel{sec:horizon@cref}{{[subsection][3][5]5.3}{[1][28][]28}}
+\newlabel{sec:nc}{{5.3}{28}{Horizon design: prediction horizon, sampling time and control horizon}{subsection.5.3}{}}
+\newlabel{sec:nc@cref}{{[subsection][3][5]5.3}{[1][28][]28}}
+\@writefile{toc}{\contentsline {paragraph}{Control horizon.}{28}{paragraph*.85}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces The deployed configuration against the cheapest one the campaign returns. \textbf  {(a)}, \textbf  {(b)} the executed trajectories in the two worlds, with the point of minimum clearance marked. At $N=15$, $\Delta t=0.35$~s the controller routes around the obstacle in both; at $N=5$, $\Delta t=0.10$~s it drives straight at the goal, which in \emph  {narrow gap} means taking the gap down its centreline and in \emph  {U-trap} means passing \emph  {through} the back wall. \textbf  {(c)} minimum clearance against the look-ahead $N\Delta t$ for all $50$ runs of the campaign: the transition is between $2.5$ and $3$~s and it does not depend on which $(N,\Delta t)$ pair realises the look-ahead. \textbf  {(d)} the tail solve time against $N$, the only parameter that governs it. The two highlighted configurations are the same in all four panels.}}{29}{figure.caption.84}\protected@file@percent }
+\newlabel{fig:horizoncompare}{{10}{29}{The deployed configuration against the cheapest one the campaign returns. \textbf {(a)}, \textbf {(b)} the executed trajectories in the two worlds, with the point of minimum clearance marked. At $N=15$, $\Delta t=0.35$~s the controller routes around the obstacle in both; at $N=5$, $\Delta t=0.10$~s it drives straight at the goal, which in \emph {narrow gap} means taking the gap down its centreline and in \emph {U-trap} means passing \emph {through} the back wall. \textbf {(c)} minimum clearance against the look-ahead $N\Delta t$ for all $\resHorizonConfigs $ runs of the campaign: the transition is between $2.5$ and $3$~s and it does not depend on which $(N,\Delta t)$ pair realises the look-ahead. \textbf {(d)} the tail solve time against $N$, the only parameter that governs it. The two highlighted configurations are the same in all four panels}{figure.caption.84}{}}
+\newlabel{fig:horizoncompare@cref}{{[figure][10][]10}{[1][28][]29}}
+\@writefile{toc}{\contentsline {paragraph}{The three parameters together.}{30}{paragraph*.86}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{On move blocking.}{30}{paragraph*.87}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{How far these numbers carry.}{30}{paragraph*.88}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Non-convex obstacles and the local-target rule}{30}{subsection.5.4}\protected@file@percent }
+\newlabel{sec:nonconvex}{{5.4}{30}{Non-convex obstacles and the local-target rule}{subsection.5.4}{}}
+\newlabel{sec:nonconvex@cref}{{[subsection][4][5]5.4}{[1][30][]30}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.4.1}What is being measured}{30}{subsubsection.5.4.1}\protected@file@percent }
+\newlabel{sec:localmin}{{5.4.1}{30}{What is being measured}{subsubsection.5.4.1}{}}
+\newlabel{sec:localmin@cref}{{[subsubsection][1][5,4]5.4.1}{[1][30][]30}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.4.2}Results}{30}{subsubsection.5.4.2}\protected@file@percent }
+\newlabel{sec:memoryfix}{{5.4.2}{30}{Results}{subsubsection.5.4.2}{}}
+\newlabel{sec:memoryfix@cref}{{[subsubsection][2][5,4]5.4.2}{[1][30][]30}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces The ten worlds of the campaign: the wide pale trace is the baseline ray projection~\eqref  {eq:localgoal}, the thin dark one the deployed geodesic $\arg \min $~\eqref  {eq:localgoalargmin}, both under limited perception. Heavy frames are the six \emph  {traps}, light frames the four \emph  {controls} that only look like traps; the subtitle gives the distance travelled by each rule. The baseline is drawn underneath and wider on purpose, because wherever the two rules choose the same side the trajectories coincide and one drawn over the other would simply hide it, and because on \emph  {dead end}, \emph  {horseshoe} and \emph  {L-corridor} the $79$ to $153$~m it travels are a limit cycle packed into a few metres at the mouth of the obstacle. In \emph  {long wall, gap north} both rules choose the open side and both arrive; in \emph  {long wall, gap south} the goal offset forces both onto the closed side and both stop there. The controls are what make the result a result: a rule that refused to enter concave-looking scenes would pass every trap and fail all four of these, where the correct behaviour is to drive straight through. The dashed trace appears in the \emph  {long wall, gap south} panel alone and is the reachability fall-through discussed in Section~\ref {sec:memoryfix}; on the other nine worlds it reproduces the deployed run exactly, so drawing it there would only thicken the line.}}{31}{figure.caption.89}\protected@file@percent }
+\newlabel{fig:escapegallery}{{11}{31}{The ten worlds of the campaign: the wide pale trace is the baseline ray projection~\eqref {eq:localgoal}, the thin dark one the deployed geodesic $\arg \min $~\eqref {eq:localgoalargmin}, both under limited perception. Heavy frames are the six \emph {traps}, light frames the four \emph {controls} that only look like traps; the subtitle gives the distance travelled by each rule. The baseline is drawn underneath and wider on purpose, because wherever the two rules choose the same side the trajectories coincide and one drawn over the other would simply hide it, and because on \emph {dead end}, \emph {horseshoe} and \emph {L-corridor} the $79$ to $153$~m it travels are a limit cycle packed into a few metres at the mouth of the obstacle. In \emph {long wall, gap north} both rules choose the open side and both arrive; in \emph {long wall, gap south} the goal offset forces both onto the closed side and both stop there. The controls are what make the result a result: a rule that refused to enter concave-looking scenes would pass every trap and fail all four of these, where the correct behaviour is to drive straight through. The dashed trace appears in the \emph {long wall, gap south} panel alone and is the reachability fall-through discussed in Section~\ref {sec:memoryfix}; on the other nine worlds it reproduces the deployed run exactly, so drawing it there would only thicken the line}{figure.caption.89}{}}
+\newlabel{fig:escapegallery@cref}{{[figure][11][]11}{[1][30][]31}}
+\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces Escape from non-convex obstacles under limited perception: the baseline ray projection~\eqref  {eq:localgoal} against the deployed geodesic $\arg \min $~\eqref  {eq:localgoalargmin}, one run each, with the per-world time budget of the simulator. Above the double rule the six traps, below it the four controls. Reversals are changes of sign of the longitudinal velocity, the signature of the limit cycle. Clearance is the closest approach to an obstacle over the whole run, against a body radius of $0.35$~m; on the runs that fail it is the $0.25$~m at which the plant stops the robot against the wall. Time is reported only for runs that reached the goal. The \emph  {long wall, gap north} row is taken at a spawn displaced $0.4$~m along the wall: with the goal on the axis the side is chosen by numerical noise, so a single run there compares the two spawns and not the two rules, and the sweep that establishes this is reported below.}}{32}{table.caption.90}\protected@file@percent }
+\newlabel{tab:escape}{{12}{32}{Escape from non-convex obstacles under limited perception: the baseline ray projection~\eqref {eq:localgoal} against the deployed geodesic $\arg \min $~\eqref {eq:localgoalargmin}, one run each, with the per-world time budget of the simulator. Above the double rule the six traps, below it the four controls. Reversals are changes of sign of the longitudinal velocity, the signature of the limit cycle. Clearance is the closest approach to an obstacle over the whole run, against a body radius of $0.35$~m; on the runs that fail it is the $0.25$~m at which the plant stops the robot against the wall. Time is reported only for runs that reached the goal. The \emph {long wall, gap north} row is taken at a spawn displaced $0.4$~m along the wall: with the goal on the axis the side is chosen by numerical noise, so a single run there compares the two spawns and not the two rules, and the sweep that establishes this is reported below}{table.caption.90}{}}
+\newlabel{tab:escape@cref}{{[table][12][]12}{[1][30][]32}}
+\@writefile{toc}{\contentsline {paragraph}{The traps.}{32}{paragraph*.91}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The two long-wall worlds.}{32}{paragraph*.92}\protected@file@percent }
+\citation{ortolani2026bo}
+\@writefile{toc}{\contentsline {paragraph}{Reachability of the selected target.}{33}{paragraph*.93}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The controls.}{33}{paragraph*.94}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The memory term.}{33}{paragraph*.95}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Cost of the repair.}{33}{paragraph*.96}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Weight tuning in closed loop: the per-axis sweep}{33}{subsection.5.5}\protected@file@percent }
+\newlabel{sec:ofat}{{5.5}{33}{Weight tuning in closed loop: the per-axis sweep}{subsection.5.5}{}}
+\newlabel{sec:ofat@cref}{{[subsection][5][5]5.5}{[1][33][]33}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces One-factor-at-a-time sweep: closed-loop score against each weight in turn, six rollouts and one $1$-D GP per axis, with the band of~\eqref  {eq:gppost}. Filled markers reach the goal, hollow ones do not; solid line is the axis optimum~\eqref  {eq:axisopt}, dashed the deployed value. $\Delta \mathcal  {J}$, the spread of the six observations, is the only quantity comparable across panels; those containing a failure use a log axis and the rest are zoomed, so the apparent amplitude is not.}}{34}{figure.caption.97}\protected@file@percent }
+\newlabel{fig:ofatcurves}{{12}{34}{One-factor-at-a-time sweep: closed-loop score against each weight in turn, six rollouts and one $1$-D GP per axis, with the band of~\eqref {eq:gppost}. Filled markers reach the goal, hollow ones do not; solid line is the axis optimum~\eqref {eq:axisopt}, dashed the deployed value. $\Delta \mathcal {J}$, the spread of the six observations, is the only quantity comparable across panels; those containing a failure use a log axis and the rest are zoomed, so the apparent amplitude is not}{figure.caption.97}{}}
+\newlabel{fig:ofatcurves@cref}{{[figure][12][]12}{[1][34][]34}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Simulation and hardware deployment}{35}{section.6}\protected@file@percent }
+\newlabel{sec:deployment}{{6}{35}{Simulation and hardware deployment}{section.6}{}}
+\newlabel{sec:deployment@cref}{{[section][6][]6}{[1][35][]35}}
+\@writefile{toc}{\contentsline {paragraph}{Simulation setting.}{35}{paragraph*.98}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Hardware deployment.}{35}{paragraph*.102}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{On model mismatch, and why it was not analysed further.}{35}{paragraph*.103}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Gazebo (right), where the stack was first closed on the Go2 and which now carries the G1 in scripted arena worlds, with the Foxglove front-end used for telemetry (left). The traces are the three components of the twist commanded by the MPC; the 3-D panel shows the accumulated LiDAR returns and the local occupancy grid rebuilt from the newest scan. Gazebo is the fastest of the three simulators and the only one routinely run faster than real time, which is what makes it the one used for regression runs of the whole node graph.}}{36}{figure.caption.99}\protected@file@percent }
+\newlabel{fig:sim-gazebo}{{13}{36}{Gazebo (right), where the stack was first closed on the Go2 and which now carries the G1 in scripted arena worlds, with the Foxglove front-end used for telemetry (left). The traces are the three components of the twist commanded by the MPC; the 3-D panel shows the accumulated LiDAR returns and the local occupancy grid rebuilt from the newest scan. Gazebo is the fastest of the three simulators and the only one routinely run faster than real time, which is what makes it the one used for regression runs of the whole node graph}{figure.caption.99}{}}
+\newlabel{fig:sim-gazebo@cref}{{[figure][13][]13}{[1][35][]36}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces The G1 in MuJoCo (left), the lighter of the two dynamic simulators and the one the replay bag of Section~\ref {sec:setup} was recorded in. Rendering is deliberately minimal: what MuJoCo is used for is the contact solver, so that the twist published by the MPC is tracked by the gait policy under the dynamics it was trained on. The RViz panel (right) shows the same run from the stack's point of view, with the filtered LiDAR returns, the local occupancy grid, the $A^\star ${} path and the MPC predicted trajectory and setpoint drawn on top of each other.}}{36}{figure.caption.100}\protected@file@percent }
+\newlabel{fig:sim-mujoco}{{14}{36}{The G1 in MuJoCo (left), the lighter of the two dynamic simulators and the one the replay bag of Section~\ref {sec:setup} was recorded in. Rendering is deliberately minimal: what MuJoCo is used for is the contact solver, so that the twist published by the MPC is tracked by the gait policy under the dynamics it was trained on. The RViz panel (right) shows the same run from the stack's point of view, with the filtered LiDAR returns, the local occupancy grid, the \astar {} path and the MPC predicted trajectory and setpoint drawn on top of each other}{figure.caption.100}{}}
+\newlabel{fig:sim-mujoco@cref}{{[figure][14][]14}{[1][35][]36}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces The G1 in Isaac Sim (left) and the navigation stack running on it (right). The simulated scene supplies both the contact dynamics for the gait policy of Section~\ref {sec:g1rl} and the rendered stereo pair from which the visual--inertial odometry is computed. In the RViz view every display the planner consumes is LiDAR-derived: the marked returns with the ground rejected, the local voxel map, the stop and slow-down zones, and the MPC prediction of Section~\ref {sec:nlp}; the visual odometry appears as a separate track, feeding the pose bridge of Section~\ref {sec:overview} rather than the map.}}{37}{figure.caption.101}\protected@file@percent }
+\newlabel{fig:sim-isaac}{{15}{37}{The G1 in Isaac Sim (left) and the navigation stack running on it (right). The simulated scene supplies both the contact dynamics for the gait policy of Section~\ref {sec:g1rl} and the rendered stereo pair from which the visual--inertial odometry is computed. In the RViz view every display the planner consumes is LiDAR-derived: the marked returns with the ground rejected, the local voxel map, the stop and slow-down zones, and the MPC prediction of Section~\ref {sec:nlp}; the visual odometry appears as a separate track, feeding the pose bridge of Section~\ref {sec:overview} rather than the map}{figure.caption.101}{}}
+\newlabel{fig:sim-isaac@cref}{{[figure][15][]15}{[1][35][]37}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusions}{38}{section.7}\protected@file@percent }
+\newlabel{sec:conclusions}{{7}{38}{Conclusions}{section.7}{}}
+\newlabel{sec:conclusions@cref}{{[section][7][]7}{[1][38][]38}}
+\bibdata{bibliography}
+\bibcite{ames2019cbf}{{1}{}{{}}{{}}}
+\bibcite{andersson2019casadi}{{2}{}{{}}{{}}}
+\bibcite{barshalom2001estimation}{{3}{}{{}}{{}}}
+\bibcite{chen1998quasi}{{4}{}{{}}{{}}}
+\bibcite{diehl2005realtime}{{5}{}{{}}{{}}}
+\bibcite{fagiano2025noc}{{6}{}{{}}{{}}}
+\bibcite{hart1968astar}{{7}{}{{}}{{}}}
+\bibcite{hyun2014trot}{{8}{}{{}}{{}}}
+\bibcite{champ}{{9}{}{{}}{{}}}
+\bibcite{koenig2005dstarlite}{{10}{}{{}}{{}}}
+\bibcite{lee2013hierarchical}{{11}{}{{}}{{}}}
+\bibcite{li2025amo}{{12}{}{{}}{{}}}
+\bibcite{mayne2000constrained}{{13}{}{{}}{{}}}
+\bibcite{ortolani2026bo}{{14}{}{{}}{{}}}
+\bibcite{pannocchia2003offsetfree}{{15}{}{{}}{{}}}
+\bibcite{raibert1986legged}{{16}{}{{}}{{}}}
+\bibcite{rasmussen2006gp}{{17}{}{{}}{{}}}
+\bibcite{rawlings2017mpc}{{18}{}{{}}{{}}}
+\bibcite{rudin2022walk}{{19}{}{{}}{{}}}
+\bibcite{schulman2017ppo}{{20}{}{{}}{{}}}
+\bibcite{shahriari2016bo}{{21}{}{{}}{{}}}
+\bibcite{wachter2006ipopt}{{22}{}{{}}{{}}}
+\bibcite{wright2015coordinate}{{23}{}{{}}{{}}}
+\providecommand\NAT@force@numbers{}\NAT@force@numbers
+\gdef \@abspage@last{40}

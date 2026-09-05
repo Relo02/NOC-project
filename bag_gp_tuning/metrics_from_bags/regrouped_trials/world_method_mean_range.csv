@@ -1,0 +1,55 @@
+World        , Method  , Metric                , Unit        , Sample filter              , N, Mean                   , Min                  , Max                  , Range
+indoor_office, baseline, Success               , success flag, all_3_trials               , 3,    0.3333333333333333  ,    0.0               ,    1.0               ,   1.0
+indoor_office, baseline, CE (m)                , m           , successful_runs            , 1,    0.0376073144835506  ,    0.0376073144835506,    0.0376073144835506,   0.0
+indoor_office, baseline, Time-to-goal (s)      , s           , successful_informative_runs, 1,   84.81889033317566    ,   84.81889033317566  ,   84.81889033317566  ,   0.0
+indoor_office, baseline, Path length (m)       , m           , informative_runs           , 2,   17.918632986032886   ,   15.837968256709413 ,   19.99929771535636  ,   4.1613294586469465
+indoor_office, baseline, Final dist to goal (m), m           , informative_runs           , 2,    0.6079063121166639  ,    0.2670350901514063,    0.9487775340819216,   0.6817424439305153
+indoor_office, baseline, MPC solve mean (ms)   , ms          , informative_runs           , 2,   46.78312417555285    ,   39.1099808344497   ,   54.456267516656    ,  15.346286682206298
+indoor_office, baseline, MPC solve p95 (ms)    , ms          , informative_runs           , 2,   79.68211814990126    ,   66.98425440008576  ,   92.37998189971675  ,  25.395727499630993
+indoor_office, baseline, MPC solve max (ms)    , ms          , informative_runs           , 2,  845.5549000000246     ,  765.6025420001242   ,  925.507257999925metrics_data2   , 159.90471599980094
+indoor_office, baseline, MPC solve samples     , samples     , informative_runs           , 2,  466.5                 ,  453.0               ,  480.0               ,  27.0
+indoor_office, bo_opti , Success               , success flag, all_3_trials               , 3,    0.3333333333333333  ,    0.0               ,    1.0               ,   1.0
+indoor_office, bo_opti , CE (m)                , m           , successful_runs            , 1,    0.0484459487070968  ,    0.0484459487070968,    0.0484459487070968,   0.0
+indoor_office, bo_opti , Time-to-goal (s)      , s           , successful_informative_runs, 1,   52.264484167099      ,   52.264484167099    ,   52.264484167099    ,   0.0
+indoor_office, bo_opti , Path length (m)       , m           , informative_runs           , 2,   12.131401832404741   ,   11.66351858177033  ,   12.599285083039153 ,   0.935766501268823
+indoor_office, bo_opti , Final dist to goal (m), m           , informative_runs           , 2,    0.49836460414430284 ,    0.3416706834336693,    0.6550585248549364,   0.31338784142126713
+indoor_office, bo_opti , MPC solve mean (ms)   , ms          , informative_runs           , 2,   23.773564638279158   ,   21.621949792012188 ,   25.925179484546128 ,   4.3032296925339395
+indoor_office, bo_opti , MPC solve p95 (ms)    , ms          , informative_runs           , 2,   39.614392275211685   ,   38.07333530030519  ,   41.155449250118174 ,   3.0821139498129853
+indoor_office, bo_opti , MPC solve max (ms)    , ms          , informative_runs           , 2,   52.799290499933704   ,   52.556464999724994 ,   53.042116000142414 ,   0.4856510004174197
+indoor_office, bo_opti , MPC solve samples     , samples     , informative_runs           , 2,  361.5                 ,  324.0               ,  399.0               ,  75.0
+open_world   , baseline, Success               , success flag, all_3_trials               , 3,    0.3333333333333333  ,    0.0               ,    1.0               ,   1.0
+open_world   , baseline, CE (m)                , m           , successful_runs            , 1,    0.0589903247680373  ,    0.0589903247680373,    0.0589903247680373,   0.0
+open_world   , baseline, Time-to-goal (s)      , s           , successful_informative_runs, 1,   41.55372953414917    ,   41.55372953414917  ,   41.55372953414917  ,   0.0
+open_world   , baseline, Path length (m)       , m           , informative_runs           , 2,    9.637788883679764   ,    8.852624056569832 ,   10.422953710789695 ,   1.5703296542198633
+open_world   , baseline, Final dist to goal (m), m           , informative_runs           , 2,    6.156436184721225   ,    0.3690051810712277,   11.943867188371224 ,  11.574862007299997
+open_world   , baseline, MPC solve mean (ms)   , ms          , informative_runs           , 2,   40.84793789167428    ,   39.59956205569162  ,   42.09631372765693  ,   2.4967516719653062
+open_world   , baseline, MPC solve p95 (ms)    , ms          , informative_runs           , 2,   59.0627702999427     ,   58.84282700017136  ,   59.28271359971404  ,   0.4398865995426817
+open_world   , baseline, MPC solve max (ms)    , ms          , informative_runs           , 2,  109.75200949997088    ,   75.50086500032194  ,  144.00315399961983  ,  68.50228899929789
+open_world   , baseline, MPC solve samples     , samples     , informative_runs           , 2,  559.0                 ,  413.0               ,  705.0               , 292.0
+open_world   , bo_opti , Success               , success flag, all_3_trials               , 3,    0.6666666666666666  ,    0.0               ,    1.0               ,   1.0
+open_world   , bo_opti , CE (m)                , m           , successful_runs            , 2,    0.045774065942313896,    0.0402705086180863,    0.0512776232665415,   0.011007114648455198
+open_world   , bo_opti , Time-to-goal (s)      , s           , successful_informative_runs, 2,   41.9420450925827     ,   41.21776700019837  ,   42.66632318496704  ,   1.4485561847686697
+open_world   , bo_opti , Path length (m)       , m           , informative_runs           , 2,    9.026520969833218   ,    8.984374624467158 ,    9.068667315199278 ,   0.08429269073211998
+open_world   , bo_opti , Final dist to goal (m), m           , informative_runs           , 2,    0.31652160602012136 ,    0.2013584245530219,    0.4316847874872209,   0.230326362934199
+open_world   , bo_opti , MPC solve mean (ms)   , ms          , informative_runs           , 2,   38.67963178271756    ,   30.33845956267344  ,   47.02080400276167  ,  16.682344440088233
+open_world   , bo_opti , MPC solve p95 (ms)    , ms          , informative_runs           , 2,   68.68164480033556    ,   53.71682460054216  ,   83.64646500012896  ,  29.929640399586795
+open_world   , bo_opti , MPC solve max (ms)    , ms          , informative_runs           , 2,   85.2432140000019     ,   68.63265999982104  ,  101.85376800018275  ,  33.22110800036171
+open_world   , bo_opti , MPC solve samples     , samples     , informative_runs           , 2,  408.0                 ,  361.0               ,  455.0               ,  94.0
+warehouse    , baseline, Success               , success flag, all_3_trials               , 3,    0.3333333333333333  ,    0.0               ,    1.0               ,   1.0
+warehouse    , baseline, CE (m)                , m           , successful_runs            , 1,    0.0270750183262211  ,    0.0270750183262211,    0.0270750183262211,   0.0
+warehouse    , baseline, Time-to-goal (s)      , s           , successful_informative_runs, 1,  474.73702907562256    ,  474.73702907562256  ,  474.73702907562256  ,   0.0
+warehouse    , baseline, Path length (m)       , m           , informative_runs           , 1,   73.96749196229695    ,   73.96749196229695  ,   73.96749196229695  ,   0.0
+warehouse    , baseline, Final dist to goal (m), m           , informative_runs           , 1,    0.402971549352085   ,    0.402971549352085 ,    0.402971549352085 ,   0.0
+warehouse    , baseline, MPC solve mean (ms)   , ms          , informative_runs           , 1,   60.782578381972286   ,   60.782578381972286 ,   60.782578381972286 ,   0.0
+warehouse    , baseline, MPC solve p95 (ms)    , ms          , informative_runs           , 1,  111.15541720027976    ,  111.15541720027976  ,  111.15541720027976  ,   0.0
+warehouse    , baseline, MPC solve max (ms)    , ms          , informative_runs           , 1, 1518.2760280004004     , 1518.2760280004004   , 1518.2760280004004   ,   0.0
+warehouse    , baseline, MPC solve samples     , samples     , informative_runs           , 1, 2529.0                 , 2529.0               , 2529.0               ,   0.0
+warehouse    , bo_opti , Success               , success flag, all_3_trials               , 3,    0.3333333333333333  ,    0.0               ,    1.0               ,   1.0
+warehouse    , bo_opti , CE (m)                , m           , successful_runs            , 1,    0.0573157093913632  ,    0.0573157093913632,    0.0573157093913632,   0.0
+warehouse    , bo_opti , Time-to-goal (s)      , s           , successful_informative_runs, 1,  188.5365345478058     ,  188.5365345478058   ,  188.5365345478058   ,   0.0
+warehouse    , bo_opti , Path length (m)       , m           , informative_runs           , 2,   41.07151162669006    ,   35.46138902069754  ,   46.68163423268258  ,  11.220245211985045
+warehouse    , bo_opti , Final dist to goal (m), m           , informative_runs           , 2,    4.0486393256332835  ,    0.3094063685156206,    7.787872282750947 ,   7.4784659142353265
+warehouse    , bo_opti , MPC solve mean (ms)   , ms          , informative_runs           , 2,   48.4068135766944     ,   28.80306756066868  ,   68.01055959272011  ,  39.207492032051434
+warehouse    , bo_opti , MPC solve p95 (ms)    , ms          , informative_runs           , 2,   77.37501999977212    ,   45.10563640005785  ,  109.64440359948638  ,  64.53876719942853
+warehouse    , bo_opti , MPC solve max (ms)    , ms          , informative_runs           , 2, 1180.1799610000216     ,  834.4650710000678   , 1525.8948509999757   , 691.4297799999079
+warehouse    , bo_opti , MPC solve samples     , samples     , informative_runs           , 2, 1961.0                 , 1673.0               , 2249.0               , 576.0

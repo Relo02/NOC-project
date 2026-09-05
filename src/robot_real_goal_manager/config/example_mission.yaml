@@ -1,0 +1,16 @@
+# example_mission.yaml
+# Example waypoint mission for robot_real_goal_manager/mission_runner_node.
+#
+# Coordinates are expressed in `frame_id` (default: odom).
+# The mission ends after the last waypoint is reached, unless repeat:=true
+# is passed to the launch (then it loops forever).
+
+frame_id: odom
+reach_radius:     0.30      # [m] distance threshold for "reached"
+leg_timeout_sec: 120.0      # [s] give up on a leg and advance after this
+
+waypoints:
+  - { x:  2.0, y:  0.0, yaw: 0.000, name: "wp1_forward" }
+  - { x:  4.0, y:  1.5, yaw: 1.570, name: "wp2_diag"    }
+  - { x:  4.0, y: -1.5, yaw: 3.140, name: "wp3_back"    }
+  - { x:  0.0, y:  0.0, yaw: 0.000, name: "home"        }

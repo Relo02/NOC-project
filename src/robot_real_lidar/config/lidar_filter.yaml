@@ -1,0 +1,31 @@
+# lidar_filter.yaml
+# Parameters for robot_real_lidar/lidar_filter_node.
+# Tweak r_max / voxel_size to balance MPC obstacle coverage against CPU load.
+
+robot_real_lidar_filter:
+  ros__parameters:
+    # ── Topics & frames ──────────────────────────────────────────────────
+    raw_topic:      "/livox/lidar"
+    filtered_topic: "/lidar/points_filtered"
+    source_frame:   "mid360_link"
+    target_frame:   "odom"
+
+    # ── Filtering ────────────────────────────────────────────────────────
+    # Range gate (Euclidean distance from the sensor, before transform)
+    r_min: 0.20    # drop points inside the robot body
+    r_max: 8.00    # match planner_params_g1.yaml:max_lidar_range
+
+    # Height gate (in target frame after transform)
+    # Absolute heights above the floor (target frame is odom). The G1's
+    # pelvis stands at 0.793 m and the Mid-360 sits ~0.40 m higher.
+    z_min: 0.15    # drop floor returns
+    z_max: 1.60    # ignore ceiling / high racking
+
+    # Voxel downsample size [m]; set to 0 to disable
+    voxel_size: 0.05
+
+    # Hard cap on republish rate (Hz)
+    publish_rate_hz: 10.0
+
+    # Max time to wait for TF (source → target)
+    tf_lookup_timeout: 0.05

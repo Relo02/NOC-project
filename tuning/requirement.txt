@@ -1,0 +1,6 @@
+# Install pip separately: pip install --upgrade pip
+numpy==1.24.4
+scipy
+hyperopt
+scikit-learn
+pandas

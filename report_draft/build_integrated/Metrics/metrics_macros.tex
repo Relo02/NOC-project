@@ -1,0 +1,253 @@
+% ========================================================================
+% metrics_macros.tex — GENERATO AUTOMATICAMENTE, NON MODIFICARE A MANO
+%
+%   rigenerare con:  python3 viz/make_results.py
+%              o con: python3 viz/results_tex.py
+%
+%   commit 9466c8a615 on main   (2026-09-02T22:49:41+00:00)
+%
+% CONVENZIONE
+%   - le macro NUMERICHE si espandono in contenuto da math mode:
+%       si scrive  $\resOrderMidpoint$  e non  \resOrderMidpoint
+%   - le macro TESTUALI (branch, commit, profilo, bag) vanno in testo.
+%
+% USO NEL REPORT
+%   \input{metrics_macros}   nel preambolo, poi nel corpo:
+%       ``the measured order is $\resOrderMidpoint$, against
+%         $\resOrderEuler$ for forward Euler''
+%   Il numero segue il codice: nessuna cifra copiata a mano.
+% ========================================================================
+
+\providecommand{\resdef}[2]{\expandafter\def\csname #1\endcsname{#2}}
+
+% Richiamo delle tabelle. Ognuna sta in un file suo sotto tab/, cosi'
+% il report la include dove vuole e resta viva a ogni rigenerazione.
+% Chi compila da un'altra cartella ridefinisce solo \restabdir:
+%     \renewcommand{\restabdir}{Metrics/tab}
+\providecommand{\restabdir}{tab}
+\providecommand{\restab}[1]{\input{\restabdir/#1}}
+
+% --- provenienza e profilo -----------------------------------------------
+\resdef{resCommit}{9466c8a615} % commit corto
+\resdef{resBranch}{main} % branch
+\resdef{resProfile}{\texttt{planner\_params\_g1.yaml}} % file YAML
+\resdef{resDate}{2026-09-02} % data della run
+\resdef{resCasadi}{3.7.2}
+\resdef{resNumpy}{1.26.4}
+\resdef{resPython}{3.10.12}
+\resdef{resBag}{\texttt{industrial\_v6}} % bag usato
+
+% --- parametri deployati (dal profilo, non copiati a mano) ---------------
+\resdef{resN}{15}              % orizzonte in passi
+\resdef{resDt}{0.35}           % passo di campionamento [s]
+\resdef{resHorizonSeconds}{5.25} % N*dt [s]
+\resdef{resVref}{0.27}         % velocita' di crociera [m/s]
+\resdef{resVxMax}{0.40}
+\resdef{resVxMin}{-0.20}       % limite di retromarcia [m/s]
+\resdef{resVxMinAbs}{0.20}     % modulo del limite di retromarcia
+\resdef{resVyMax}{0.20}
+\resdef{resOmegaMax}{0.40}
+\resdef{resWobsDep}{120}       % peso della barriera
+\resdef{resObsRDep}{0.40}      % raggio di sicurezza [m]
+\resdef{resAobsDep}{6.00}      % pendenza della barriera
+\resdef{resObsCheckR}{2.0}     % raggio di ricerca degli ostacoli [m]
+\resdef{resMobs}{8}            % numero fisso di termini di ostacolo
+\resdef{resTauV}{0.00100}      % costante di tempo [s]
+\resdef{resIntegrator}{midpoint}
+\resdef{resPathMode}{time}
+\resdef{resTerminalMode}{none}
+
+% --- macro citate dal report ---------------------------------------------
+\resdef{resSweepSolves}{8688} % solve totali della campagna estesa
+\resdef{resSweepFails}{308} % solve falliti
+\resdef{resFailPctN}{0.7}   % fallimenti a N=15 [%]
+\resdef{resFailPctNmid}{3.5} % fallimenti a N=26 [%]
+\resdef{resFailPctNbig}{6.5} % fallimenti a N=40 [%]
+\resdef{resNops}{3603}      % istruzioni scalari di f e g dopo expand, N=15
+\resdef{resColdDep}{0.5}    % primo solve a freddo, configurazione deployata [s]
+\resdef{resColdMax}{0.6}    % primo solve a freddo, N=40 [s]
+
+% --- discretizzazione (ordine di troncamento) ----------------------------
+\resdef{resOrderEuler}{1.00}   % ordine misurato, Euler
+\resdef{resOrderMidpoint}{2.00} % ordine misurato, punto medio
+\resdef{resErrEulerDep}{2.85\times 10^{-2}} % errore a dt deployato [m], arco sintetico
+\resdef{resErrMidpointDep}{2.50\times 10^{-4}}
+\resdef{resIntegratorGain}{114} % rapporto Euler/punto medio
+\resdef{resOrderWindow}{2.80}  % finestra del test sintetico [s]
+
+% --- bersaglio locale: le tre metriche (figura §3.1) ---------------------
+\resdef{resFigWorld}{horseshoe} % mondo della figura
+\resdef{resFigProjGeo}{30.2} % geodetica del bersaglio scelto dalla proiezione [m]
+\resdef{resFigEuclGeo}{30.4} % geodetica del bersaglio scelto dall'argmin euclideo [m]
+\resdef{resFigGeoGeo}{7.4} % geodetica del bersaglio scelto dalla geodetica [m]
+
+% --- integratore su orizzonti veri (bag) ---------------------------------
+\resdef{resIntegBagCycles}{12}        % orizzonti ri-risolti
+\resdef{resIntegBagName}{industrial\_v6} % bag usata
+\resdef{resIntegBagEuler}{2.08\times 10^{-2}} % errore Euler, orizzonti veri [m]
+\resdef{resIntegBagMidpoint}{3.66\times 10^{-4}}
+\resdef{resIntegBagEulerTail}{3.69\times 10^{-2}}
+\resdef{resIntegBagMidpointTail}{7.16\times 10^{-4}}
+\resdef{resIntegBagGain}{57}          % rapporto sugli orizzonti veri
+\resdef{resIntegBagOrderEuler}{1.00}
+\resdef{resIntegBagOrderMidpoint}{2.00}
+\resdef{resIntegBagOmega}{0.54}       % escursione di omega [rad/s]
+\resdef{resLagFloor}{8.01\times 10^{-4}} % spostamento trascurato dal lag [m]
+\resdef{resIntegLoopSpread}{2.3}      % scarto max in anello chiuso [%]
+
+% --- errore di predizione in anello aperto -------------------------------
+\resdef{resPredCycles}{695}    % cicli del bag usati
+\resdef{resPredOffset}{0.0561} % offset a k=0 [m]
+\resdef{resPredDivergence}{0.797} % divergenza a fine orizzonte [m]
+\resdef{resPredVsEuler}{38}    % divergenza / errore Euler
+\resdef{resPredVsMidpoint}{2180} % divergenza / errore punto medio
+
+% --- struttura e sparsita' dell'NLP --------------------------------------
+\resdef{resNvar}{141}         % variabili decisionali a N=15
+\resdef{resNcon}{156}
+\resdef{resNeq}{96}           % vincoli di uguaglianza
+\resdef{resNineq}{60}         % box sugli ingressi
+\resdef{resNpar}{121}         % parametri CasADi
+\resdef{resJacDensity}{1.73}  % densita' jacobiano [%]
+\resdef{resHessDensity}{4.45} % densita' hessiana [%]
+\resdef{resNvarState}{96}     % variabili di stato
+\resdef{resNvarInput}{45}     % variabili di ingresso
+\resdef{resNeqDyn}{90}        % uguaglianze di dinamica
+\resdef{resNBarrier}{256}     % termini di barriera nel costo
+\resdef{resNvarBig}{456}      % variabili a N=50
+\resdef{resNbig}{50}
+\resdef{resJacDensityBig}{0.54}
+
+% --- single contro multiple shooting -------------------------------------
+\resdef{resShootN}{15}              % orizzonte del confronto
+\resdef{resShootVarMulti}{141}
+\resdef{resShootVarSingle}{45}
+\resdef{resShootConMulti}{156}
+\resdef{resShootConSingle}{60}
+\resdef{resShootHessDensMulti}{4.45} % densita' hessiana [%]
+\resdef{resShootHessDensSingle}{100.00}
+\resdef{resShootSameMinima}{no}     % stesso minimo su tutti gli N
+
+% --- derivate: AD contro differenze finite -------------------------------
+\resdef{resDerivNvar}{141}      % variabili del punto di prova
+\resdef{resTimeF}{132.4}        % una valutazione di f [us]
+\resdef{resTimeGrad}{193.7}     % un gradiente per AD [us]
+\resdef{resADratio}{1.46}       % AD in valutazioni di f
+\resdef{resADratioMin}{1.13}
+\resdef{resADratioMax}{2.13}
+\resdef{resFDforwardEvals}{142}
+\resdef{resFDcentralEvals}{282}
+\resdef{resFDforwardErr}{1.27\times 10^{-7}}
+\resdef{resFDcentralErr}{9.84\times 10^{-11}}
+\resdef{resCycleBudget}{125}    % budget di ciclo [ms]
+\resdef{resFDcentralBudget}{30} % quota del budget per FD centrate [%]
+
+% --- hessiana esatta contro L-BFGS ---------------------------------------
+\resdef{resIterExactHess}{35}
+\resdef{resIterLBFGS}{89}
+\resdef{resHessIterSaving}{61} % iterazioni risparmiate [%]
+
+% --- interior point contro active set ------------------------------------
+\resdef{resSolverIneqLow}{60}    % disuguaglianze, regime piccolo
+\resdef{resSolverIneqHigh}{300}  % disuguaglianze, regime grande
+\resdef{resSolverRatioMin}{1.2}  % vantaggio minimo del punto interno, regime piccolo
+\resdef{resSolverRatioLow}{2.2}  % vantaggio del punto interno, regime piccolo
+\resdef{resSolverRatioHigh}{63.6} % vantaggio del punto interno, regime grande
+\resdef{resSolverSqpFail}{3}     % run in cui l'SQP non risolve il QP
+\resdef{resSolverRuns}{6}        % run del confronto
+\resdef{resSolverSameMinima}{no}
+
+% --- condizioni di ottimalita' lungo la missione -------------------------
+\resdef{resKKTcycles}{9}        % cicli analizzati
+\resdef{resLICQalways}{yes}
+\resdef{resStrictAlways}{yes}
+\resdef{resSOCalways}{yes}
+\resdef{resConeMin}{38}
+\resdef{resConeMax}{44}
+\resdef{resConeFirst}{38}       % cono al primo ciclo campionato
+\resdef{resConeLast}{43}        % cono all'ultimo
+\resdef{resActiveLast}{98}      % vincoli attivi all'ultimo ciclo
+\resdef{resLambdaMinWorst}{1.23\times 10^{0}} % min sul profilo di lambda_min proiettato
+\resdef{resActiveBoundsMax}{7}  % massimo di box attivi
+\resdef{resGradLagWorst}{8.87\times 10^{-11}} % residuo di stazionarieta' peggiore
+
+% --- penalita' esatta l1 contro l2 ---------------------------------------
+\resdef{resDsafe}{1.10}     % distanza di sicurezza imposta [m]
+\resdef{resMuMax}{26767}    % moltiplicatore massimo del vincolo di distanza
+\resdef{resRhoLoneZero}{1\times 10^{5}} % rho a cui lo slack l1 si annulla
+\resdef{resSlopeLtwo}{-1.00} % pendenza log-log della coda l2
+
+% --- vincolo terminale di equilibrio -------------------------------------
+\resdef{resTermSlackMax}{0}  % slack terminale massimo
+\resdef{resTermFeasible}{yes}
+\resdef{resTermCostMin}{1.2} % costo minimo [%]
+\resdef{resTermCostMax}{40.4} % costo massimo [%]
+\resdef{resTermAbsMin}{2.2}  % aumento assoluto minimo di J*
+\resdef{resTermAbsMax}{7.0}  % aumento assoluto massimo di J*
+\resdef{resTermJMin}{6.6}    % J* piu' piccolo fra i cicli
+\resdef{resTermJMax}{567.6}  % J* piu' grande fra i cicli
+\resdef{resLagDiscrete}{1.000000} % 1 - exp(-dt/tau) al profilo deployato
+
+% --- vincoli robusti (constraint tightening) -----------------------------
+\resdef{resBetaQuantile}{95}    % quantile usato per il tubo [%]
+\resdef{resBetaZero}{0.0000}    % margine a k=0 [m]
+\resdef{resBetaEnd}{1.0363}     % margine a fine orizzonte [m]
+\resdef{resBetaMonotone}{yes}
+\resdef{resRobustCases}{6}      % casi provati
+\resdef{resRobustEffective}{5}  % casi in cui il tubo morde
+\resdef{resRobustBestDelta}{0.437} % guadagno massimo di clearance [m]
+
+% --- regolarita' della soluzione e biforcazione --------------------------
+\resdef{resBifLow}{60.0}         % ultimo W senza biforcazione
+\resdef{resBifHigh}{120}         % primo W con biforcazione
+\resdef{resBifDeployedBelow}{no}
+\resdef{resBifBagCycle}{436}     % ciclo piu' impegnativo
+\resdef{resBifBagEver}{no}
+\resdef{resBifCostGap}{7.44}     % divario relativo fra i due minimi [%]
+
+% --- path following in theta contro riferimento a tempo ------------------
+\resdef{resVxTime}{0.269}    % vx media, riferimento a tempo
+\resdef{resVxTheta}{0.379}   % vx media, ascissa
+\resdef{resAdvanceTime}{1.351} % avanzamento [m]
+\resdef{resAdvanceTheta}{2.038}
+\resdef{resAdvanceGain}{51}  % guadagno [%]
+\resdef{resIterTime}{9.3}
+\resdef{resIterTheta}{25.2}
+\resdef{resVrefUnused}{32}   % velocita' lasciata inutilizzata da v_ref [%]
+\resdef{resPFcycles}{6}      % cicli confrontati
+
+% --- campagna orizzonte (N, dt) ------------------------------------------
+\resdef{resHorizonBudget}{125}    % budget di ciclo [ms]
+\resdef{resHorizonOverBudget}{0}  % configurazioni oltre budget
+\resdef{resHorizonConfigs}{50}    % configurazioni provate
+\resdef{resHorizonDepTail}{23.5}  % p95 peggiore della configurazione deployata [ms]
+\resdef{resHorizonNondom}{9}      % configurazioni non dominate
+\resdef{resHorizonDepNondom}{no}
+\resdef{resHorizonSplit}{6}       % soglia della fascia [s]
+\resdef{resHorizonLowT}{12.6}
+\resdef{resHorizonLowC}{0.000}
+\resdef{resHorizonHighT}{17.0}
+\resdef{resHorizonHighC}{0.784}
+\resdef{resHorizonCheapN}{5}
+\resdef{resHorizonCheapDt}{0.10}
+\resdef{resHorizonCheapPtail}{13.2} % p95 della piu' economica [ms]
+
+% --- orizzonte di controllo N_c ------------------------------------------
+\resdef{resNcCases}{26}     % configurazioni provate
+\resdef{resNcBestRatio}{2.0} % miglior risparmio di p95
+\resdef{resNcBestN}{15}
+\resdef{resNcFreeCases}{1}  % casi in cui il taglio dei gradi di liberta' e' gratis
+
+% --- fronte di Pareto multi-obiettivo ------------------------------------
+\resdef{resParetoPoints}{10}       % scalarizzazioni provate
+\resdef{resParetoNondom}{5}        % punti non dominati
+\resdef{resParetoConvex}{no}
+\resdef{resParetoChosen}{(1.0,\ 0.0,\ 0.0)} % scalarizzazione scelta
+\resdef{resParetoSpreadAcc}{3.09\times 10^{-1}} % escursione dell'accuratezza [m]
+\resdef{resParetoSpreadEffort}{3.71\times 10^{-2}}
+\resdef{resParetoSpreadTime}{4.90} % escursione del tempo al goal [s]
+\resdef{resParetoRelAcc}{21.0}     % escursione relativa: accuratezza [%]
+\resdef{resParetoRelEffort}{18.0}  % escursione relativa: sforzo [%]
+\resdef{resParetoRelTime}{28.1}    % escursione relativa: tempo [%]
+\resdef{resParetoInformative}{yes}
+
