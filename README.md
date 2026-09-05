@@ -10,7 +10,7 @@ velocity commands.
 
 The project is also the object of study: the deployed NLP is instrumented and measured — NLP
 structure and sparsity, KKT conditions and multipliers, automatic
-differentiation against finite differences, horizon and control-horizon sweeps, interior point against active set. Every number in the report comes from this stack, tested in simulation and most of the its components have been also deployed on real hardware.
+differentiation against finite differences, horizon and control-horizon sweeps, interior point against active set. Every number in the report comes from this stack, tested in simulation and most of its components have been also deployed on real hardware.
 
 ---
 
@@ -187,8 +187,8 @@ python3 metrics/make_results.py --bag metrics/bags/<name>
 ```
 
 `make_results.py` writes `metrics/out/results.json`, `results.md` and the whole `metrics/out/tex/`
-tree — one LaTeX macro per scalar. The rule that holds this together: **no number in the report is
-ever typed by hand.** One writes `$\resPredDivergence$` and the value follows the code.
+tree — one LaTeX macro per scalar. The rule here is that **no number in the report is
+typed by hand.** One writes `$\resPredDivergence$` and from this procedure, all the metrics of the optimization problem are directly extracted, which was really useful for iterating the process while developing and improving the stack.
 
 Measurements are grouped by class, because the class decides when they must be redone:
 
